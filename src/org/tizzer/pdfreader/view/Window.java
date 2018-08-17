@@ -332,6 +332,7 @@ public class Window extends JFrame {
     private void startShow() {
         this.setTitle(SystemConstants._title);
         this.setIconImage(SystemConstants._imglogo.getImage());
+        this.setResizable(false);
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);

@@ -10,25 +10,24 @@ import java.util.Enumeration;
 
 public class BootApplication {
 
-//    private static void initGlobalFont(Font font) {
-//        FontUIResource fontRes = new FontUIResource(font);
-//        for (Enumeration<Object> keys = UIManager.getDefaults().keys();
-//             keys.hasMoreElements(); ) {
-//            Object key = keys.nextElement();
-//            Object value = UIManager.get(key);
-//            if (value instanceof FontUIResource) {
-//                UIManager.put(key, fontRes);
-//            }
-//        }
-//    }
+    private static void initGlobalFont(Font font) {
+        FontUIResource fontRes = new FontUIResource(font);
+        for (Enumeration<Object> keys = UIManager.getDefaults().keys();
+             keys.hasMoreElements(); ) {
+            Object key = keys.nextElement();
+            Object value = UIManager.get(key);
+            if (value instanceof FontUIResource) {
+                UIManager.put(key, fontRes);
+            }
+        }
+    }
 
     public static void main(String[] args) throws Exception {
-//        initGlobalFont(new Font("Microsoft YaHei", Font.PLAIN, 12));
-//        UIManager.put("RootPane.setupButtonVisible", false);
-//        BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
-//        BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
-//        BeautyEyeLNFHelper.launchBeautyEyeLNF();
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        initGlobalFont(new Font("Microsoft YaHei", Font.PLAIN, 12));
+        UIManager.put("RootPane.setupButtonVisible", false);
+        BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.translucencySmallShadow;
+        BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
+        BeautyEyeLNFHelper.launchBeautyEyeLNF();
         SwingUtilities.invokeLater(Window::new);
     }
 
