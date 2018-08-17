@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ce41cf7-b484-426e-8cb3-d42c014f3f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/PDFReader_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFReader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PDFReader.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PDFReader/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +30,7 @@
         <counts>
           <entry key="class" value="7" />
           <entry key="gif" value="1" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="3" />
           <entry key="iml" value="2" />
           <entry key="java" value="185" />
           <entry key="png" value="2" />
@@ -49,7 +42,7 @@
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="3" />
           <entry key="JAVA" value="185" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -57,12 +50,13 @@
           <entry key="dummy" value="26" />
           <entry key="gitignore" value="27" />
           <entry key="java" value="11886" />
+          <entry key="txt" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="11886" />
-          <entry key="PLAIN_TEXT" value="53" />
+          <entry key="PLAIN_TEXT" value="70" />
         </counts>
       </usages-collector>
     </session>
@@ -162,9 +156,9 @@
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/UnsupportedFileDialog.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -248,6 +242,15 @@
             <path>
               <item name="PDFReader" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDFReader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDFReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDFReader" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDFReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -397,9 +400,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="234" y="13" width="1400" height="1000" extended-state="1" />
+    <frame x="234" y="13" width="1400" height="1000" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22543353" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22543353" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -407,7 +410,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32910052" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49925372" visible="true" weight="0.35585585" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49925372" visible="true" weight="0.35585585" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -433,6 +436,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init this project" />
+    <option name="LAST_COMMIT_MESSAGE" value="init this project" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/BoundedRangeModel.java" />
@@ -588,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -609,6 +609,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7416">
           <caret line="329" column="11" lean-forward="true" selection-start-line="329" selection-start-column="11" selection-end-line="329" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
         </state>
       </provider>
     </entry>
