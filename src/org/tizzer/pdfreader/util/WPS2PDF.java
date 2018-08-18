@@ -5,7 +5,7 @@ import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
 
-class Office2PDF {
+class WPS2PDF {
     private static final Integer WORD_TO_PDF_OPERAND = 17;
     private static final Integer PPT_TO_PDF_OPERAND = 32;
     private static final Integer EXCEL_TO_PDF_OPERAND = 0;
@@ -21,7 +21,7 @@ class Office2PDF {
         Dispatch doc = null;
         try {
             ComThread.InitSTA();
-            activeXComponent = new ActiveXComponent("Word.Application");
+            activeXComponent = new ActiveXComponent("KWPS.Application");
             activeXComponent.setProperty("Visible", false);
             Dispatch docs = activeXComponent.getProperty("Documents").toDispatch();
             Object[] obj = new Object[]{
@@ -32,7 +32,6 @@ class Office2PDF {
                     new Variant("pwd")
             };
             doc = Dispatch.invoke(docs, "Open", Dispatch.Method, obj, new int[1]).toDispatch();
-//          Dispatch.put(doc, "Compatibility", false);  //兼容性检查,为特定值false不正确
             Dispatch.put(doc, "RemovePersonalInformation", false);
             Dispatch.call(doc, "ExportAsFixedFormat", pdfFilePath, WORD_TO_PDF_OPERAND);
         } catch (Exception e) {
@@ -59,7 +58,7 @@ class Office2PDF {
         Dispatch ppt = null;
         try {
             ComThread.InitSTA();
-            activeXComponent = new ActiveXComponent("Powerpoint.Application");
+            activeXComponent = new ActiveXComponent("KWPP.Application");
             Dispatch ppts = activeXComponent.getProperty("Presentations").toDispatch();
             /*
              * call
@@ -93,7 +92,7 @@ class Office2PDF {
         Dispatch excel = null;
         try {
             ComThread.InitSTA();
-            activeXComponent = new ActiveXComponent("Excel.Application");
+            activeXComponent = new ActiveXComponent("KET.Application");
             activeXComponent.setProperty("Visible", new Variant(false));
             activeXComponent.setProperty("AutomationSecurity", new Variant(3)); // 禁用宏
             Dispatch excels = activeXComponent.getProperty("Workbooks").toDispatch();

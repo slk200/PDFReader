@@ -8,25 +8,25 @@ import org.tizzer.pdfreader.callback.ProcessListener;
 import java.io.File;
 import java.io.IOException;
 
-public class Office2PDFHandler {
+public class WPS2PDFHandler {
     //计数器
-    private static int WORD_NUM = 0;
-    private static int PPT_NUM = 0;
-    private static int EXCEL_NUM = 0;
-    private static int PDF_NUM = 0;
-    private static int PAGE_NUM = 0;
+    private int WORD_NUM = 0;
+    private int PPT_NUM = 0;
+    private int EXCEL_NUM = 0;
+    private int PDF_NUM = 0;
+    private int PAGE_NUM = 0;
     //监听器
-    private static LogListener logListener;
-    private static CountListener countListener;
-    private static ProcessListener processListener;
+    private LogListener logListener;
+    private CountListener countListener;
+    private ProcessListener processListener;
     //启动信号
-    private static boolean signal;
+    private boolean signal;
 
-    public static boolean isStarted() {
+    public boolean isStarted() {
         return signal;
     }
 
-    public static void start() {
+    public void start() {
         signal = true;
     }
 
@@ -35,8 +35,8 @@ public class Office2PDFHandler {
      *
      * @param logListener
      */
-    public static void addLogListener(LogListener logListener) {
-        Office2PDFHandler.logListener = logListener;
+    public void addLogListener(LogListener logListener) {
+        this.logListener = logListener;
     }
 
     /**
@@ -44,8 +44,8 @@ public class Office2PDFHandler {
      *
      * @param countListener
      */
-    public static void addCountListener(CountListener countListener) {
-        Office2PDFHandler.countListener = countListener;
+    public void addCountListener(CountListener countListener) {
+        this.countListener = countListener;
     }
 
     /**
@@ -53,8 +53,8 @@ public class Office2PDFHandler {
      *
      * @param processListener
      */
-    public static void addProcessListener(ProcessListener processListener) {
-        Office2PDFHandler.processListener = processListener;
+    public void addProcessListener(ProcessListener processListener) {
+        this.processListener = processListener;
     }
 
     /**
@@ -65,7 +65,7 @@ public class Office2PDFHandler {
      *
      * @param parent
      */
-    public static void process(File parent) {
+    public void process(File parent) {
         if (parent.isDirectory()) {
             File[] files = parent.listFiles();
             if (files != null) {
@@ -83,12 +83,17 @@ public class Office2PDFHandler {
                 switch (suffix) {
                     case "doc":
                     case "docx":
+                    case "wps":
                         WORD_NUM++;
                         countListener.countWord(WORD_NUM);
                         office2pdf(pdfFilePath, parent, "word");
                         break;
                     case "ppt":
                     case "pptx":
+                    case "dps":
+                    case "dpt":
+                    case "pot":
+                    case "pps":
                         PPT_NUM++;
                         countListener.countPpt(PPT_NUM);
                         office2pdf(pdfFilePath, parent, "ppt");
@@ -116,7 +121,7 @@ public class Office2PDFHandler {
      *
      * @param file
      */
-    private static void count(File file) {
+    private void count(File file) {
         logListener.log("开始计数\n");
         logListener.log(file.getAbsolutePath() + "\n");
         try {
@@ -138,21 +143,21 @@ public class Office2PDFHandler {
      * @param parentFile
      * @param fileType
      */
-    private static void office2pdf(String PDFFile, File parentFile, String fileType) {
+    private void office2pdf(String PDFFile, File parentFile, String fileType) {
         if (!new File(PDFFile).exists()) {
             logListener.log("开始转换\n");
             switch (fileType) {
                 case "word":
                     logListener.log("转换word: " + parentFile.getAbsolutePath() + "\n");
-                    Office2PDF.word2pdf(parentFile.getAbsolutePath(), PDFFile);
+                    WPS2PDF.word2pdf(parentFile.getAbsolutePath(), PDFFile);
                     break;
                 case "ppt":
                     logListener.log("转换ppt: " + parentFile.getAbsolutePath() + "\n");
-                    Office2PDF.ppt2pdf(parentFile.getAbsolutePath(), PDFFile);
+                    WPS2PDF.ppt2pdf(parentFile.getAbsolutePath(), PDFFile);
                     break;
                 case "excel":
                     logListener.log("转换excel: " + parentFile.getAbsolutePath() + "\n");
-                    Office2PDF.excel2pdf(parentFile.getAbsolutePath(), PDFFile);
+                    WPS2PDF.excel2pdf(parentFile.getAbsolutePath(), PDFFile);
                     break;
                 default:
             }
@@ -165,7 +170,7 @@ public class Office2PDFHandler {
      * 1.重置文件列表
      * 2.重置计数器
      */
-    public static void reset() {
+    public void reset() {
         WORD_NUM = 0;
         PPT_NUM = 0;
         EXCEL_NUM = 0;

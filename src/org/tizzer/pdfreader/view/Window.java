@@ -3,9 +3,9 @@ package org.tizzer.pdfreader.view;
 import org.tizzer.pdfreader.callback.CountListener;
 import org.tizzer.pdfreader.constants.SystemConstants;
 import org.tizzer.pdfreader.layout.VerticalFlowLayout;
-import org.tizzer.pdfreader.util.Office2PDFHandler;
 import org.tizzer.pdfreader.util.PropParser;
 import org.tizzer.pdfreader.util.ThreadPool;
+import org.tizzer.pdfreader.util.WPS2PDFHandler;
 import org.tizzer.pdfreader.view.dialog.SettingDialog;
 import org.tizzer.pdfreader.view.dialog.UnsupportedFileDialog;
 
@@ -55,61 +55,8 @@ public class Window extends JFrame {
     private int isTableNeedBottom = 0;
     private int isConsoleNeedBottom = 0;
     //分析任务
-    private Runnable mTask = new Runnable() {
-        @Override
-        public void run() {
-            mProgress.setVisible(true);
-            mAnalysisBtn.setEnabled(false);
-            if (!Office2PDFHandler.isStarted()) {
-                Office2PDFHandler.addLogListener(message -> {
-                    isConsoleNeedBottom = 0;
-                    mConsole.append(message);
-                });
-                Office2PDFHandler.addCountListener(new CountListener() {
-                    @Override
-                    public void countWord(int num) {
-                        mWordLabel.setText(SystemConstants._word + num);
-                    }
-
-                    @Override
-                    public void countPpt(int num) {
-                        mPptLabel.setText(SystemConstants._ppt + num);
-                    }
-
-                    @Override
-                    public void countExcel(int num) {
-                        mExcelLabel.setText(SystemConstants._excel + num);
-                    }
-
-                    @Override
-                    public void countPDF(int num) {
-                        mPDFLabel.setText(SystemConstants._pdf + num);
-                    }
-
-                    @Override
-                    public void countPages(String filename, int page, int num) {
-                        isTableNeedBottom = 0;
-                        mTableModel.addRow(new Object[]{filename, page});
-                        mPageLabel.setText(SystemConstants._page + num);
-                    }
-                });
-                Office2PDFHandler.addProcessListener(directory -> {
-                    if (fileSet == null) {
-                        fileSet = new HashSet<>();
-                        mErrorLabel.setText(SystemConstants._existerror);
-                        mErrorLabel.setIcon(SystemConstants._imgerroron);
-                        mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileon);
-                    }
-                    fileSet.add(directory);
-                });
-                Office2PDFHandler.start();
-            }
-            Office2PDFHandler.process(mSelectedFile);
-            mProgress.setVisible(false);
-            mAnalysisBtn.setEnabled(true);
-            mUnsupportedFileBtn.setEnabled(true);
-        }
-    };
+    private ProcessTask mTask = new ProcessTask();
+    private WPS2PDFHandler wps2PDFHandler = new WPS2PDFHandler();
 
     public Window() {
         initComponents();
@@ -306,15 +253,20 @@ public class Window extends JFrame {
         });
 
         mUnsupportedFileBtn.addActionListener(event -> {
-            StringBuilder unsupportedFileHtml = new StringBuilder();
-            for (String file : fileSet) {
-                unsupportedFileHtml.append("<a href='file://")
-                        .append(file)
-                        .append("'>")
-                        .append(file)
-                        .append("</a><br/><br/>");
-            }
-            UnsupportedFileDialog.display(Window.this, unsupportedFileHtml);
+            new Thread(() -> {
+                System.out.println(mUnsupportedFileBtn);
+                mUnsupportedFileBtn.setEnabled(false);
+                StringBuilder unsupportedFileHtml = new StringBuilder();
+                for (String file : fileSet) {
+                    unsupportedFileHtml.append("<a href='file://")
+                            .append(file)
+                            .append("'>")
+                            .append(file)
+                            .append("</a><br/><br/>");
+                }
+                UnsupportedFileDialog.display(Window.this, unsupportedFileHtml);
+                mUnsupportedFileBtn.setEnabled(true);
+            }).start();
         });
 
         mSettingMenuItem.addActionListener(event -> {
@@ -355,6 +307,65 @@ public class Window extends JFrame {
         mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileoff);
         fileSet = null;
         mConsole.setText(null);
-        Office2PDFHandler.reset();
+        wps2PDFHandler.reset();
+    }
+
+    private class ProcessTask implements Runnable {
+
+        @Override
+        public void run() {
+            mProgress.setVisible(true);
+            mAnalysisBtn.setEnabled(false);
+            if (!wps2PDFHandler.isStarted()) {
+                wps2PDFHandler.addLogListener(message -> {
+                    isConsoleNeedBottom = 0;
+                    mConsole.append(message);
+                });
+                wps2PDFHandler.addCountListener(new CountListener() {
+                    @Override
+                    public void countWord(int num) {
+                        mWordLabel.setText(SystemConstants._word + num);
+                    }
+
+                    @Override
+                    public void countPpt(int num) {
+                        mPptLabel.setText(SystemConstants._ppt + num);
+                    }
+
+                    @Override
+                    public void countExcel(int num) {
+                        mExcelLabel.setText(SystemConstants._excel + num);
+                    }
+
+                    @Override
+                    public void countPDF(int num) {
+                        mPDFLabel.setText(SystemConstants._pdf + num);
+                    }
+
+                    @Override
+                    public void countPages(String filename, int page, int num) {
+                        isTableNeedBottom = 0;
+                        mTableModel.addRow(new Object[]{filename, page});
+                        mPageLabel.setText(SystemConstants._page + num);
+                    }
+                });
+                wps2PDFHandler.addProcessListener(directory -> {
+                    if (fileSet == null) {
+                        fileSet = new HashSet<>();
+                        mErrorLabel.setText(SystemConstants._existerror);
+                        mErrorLabel.setIcon(SystemConstants._imgerroron);
+                    }
+                    fileSet.add(directory);
+                });
+                wps2PDFHandler.start();
+            }
+            wps2PDFHandler.process(mSelectedFile);
+            mProgress.setVisible(false);
+            mAnalysisBtn.setEnabled(true);
+            if (fileSet != null) {
+                mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileon);
+                mUnsupportedFileBtn.setEnabled(true);
+            }
+        }
     }
 }
