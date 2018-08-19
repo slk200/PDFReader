@@ -1,9 +1,9 @@
 package org.tizzer.pdfreader.util;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.tizzer.pdfreader.callback.CountListener;
-import org.tizzer.pdfreader.callback.LogListener;
-import org.tizzer.pdfreader.callback.ProcessListener;
+import org.tizzer.pdfreader.util.callback.CountListener;
+import org.tizzer.pdfreader.util.callback.LogListener;
+import org.tizzer.pdfreader.util.callback.ProcessListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -85,7 +85,7 @@ public class WPS2PDFHandler {
                     case "docx":
                     case "wps":
                         WORD_NUM++;
-                        countListener.countWord(WORD_NUM);
+                        countListener.countWORD(WORD_NUM);
                         office2pdf(pdfFilePath, parent, "word");
                         break;
                     case "ppt":
@@ -95,7 +95,7 @@ public class WPS2PDFHandler {
                     case "pot":
                     case "pps":
                         PPT_NUM++;
-                        countListener.countPpt(PPT_NUM);
+                        countListener.countPPT(PPT_NUM);
                         office2pdf(pdfFilePath, parent, "ppt");
                         break;
                     case "xls":
@@ -149,15 +149,15 @@ public class WPS2PDFHandler {
             switch (fileType) {
                 case "word":
                     logListener.log("转换word: " + parentFile.getAbsolutePath() + "\n");
-                    WPS2PDF.word2pdf(parentFile.getAbsolutePath(), PDFFile);
+                    WPS2PDFCore.word2pdf(parentFile.getAbsolutePath(), PDFFile);
                     break;
                 case "ppt":
                     logListener.log("转换ppt: " + parentFile.getAbsolutePath() + "\n");
-                    WPS2PDF.ppt2pdf(parentFile.getAbsolutePath(), PDFFile);
+                    WPS2PDFCore.ppt2pdf(parentFile.getAbsolutePath(), PDFFile);
                     break;
                 case "excel":
                     logListener.log("转换excel: " + parentFile.getAbsolutePath() + "\n");
-                    WPS2PDF.excel2pdf(parentFile.getAbsolutePath(), PDFFile);
+                    WPS2PDFCore.excel2pdf(parentFile.getAbsolutePath(), PDFFile);
                     break;
                 default:
             }

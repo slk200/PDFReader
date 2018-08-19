@@ -28,7 +28,7 @@ public class UnsupportedFileDialog extends JDialog {
     private void initComponents(StringBuilder html) {
         mEditorPane = new JEditorPane();
         mEditorPane.setBorder(null);
-        mEditorPane.setContentType(SystemConstants._typehtml);
+        mEditorPane.setContentType(SystemConstants.TEXT_HTML);
         mEditorPane.setEditable(false);
         mEditorPane.setText(html.toString());
         mEditorPane.setCaretPosition(0);
@@ -51,7 +51,7 @@ public class UnsupportedFileDialog extends JDialog {
     }
 
     private void initProperties() {
-        this.setTitle(SystemConstants._dialogtitle);
+        this.setTitle(SystemConstants.DIALOG_TITLE);
         this.setIconImage(SystemConstants._imglogo.getImage());
         this.setSize(640, 480);
         this.setModal(true);

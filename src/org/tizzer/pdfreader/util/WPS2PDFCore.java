@@ -5,7 +5,7 @@ import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
 
-class WPS2PDF {
+class WPS2PDFCore {
     private static final Integer WORD_TO_PDF_OPERAND = 17;
     private static final Integer PPT_TO_PDF_OPERAND = 32;
     private static final Integer EXCEL_TO_PDF_OPERAND = 0;

@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ce41cf7-b484-426e-8cb3-d42c014f3f6c" name="Default" comment="">
+    <list default="true" id="7ce41cf7-b484-426e-8cb3-d42c014f3f6c" name="Default" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstraints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/ConsolePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/FilePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/parts/SystemMenuBar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/CountListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/callback/CountListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/LogListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/callback/LogListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/ProcessListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/callback/ProcessListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/AbstractLayoutManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/VerticalFlowLayout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/UnsupportedFileDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/UnsupportedFileDialog.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,54 +35,51 @@
     <session id="-2130793798">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
-          <entry key="project.open.time.0" value="8" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="21" />
+          <entry key="project.open.time.0" value="9" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.2" value="6" />
           <entry key="project.open.time.3" value="3" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="LICENSE" value="1" />
-          <entry key="class" value="7" />
+          <entry key="class" value="38" />
           <entry key="gif" value="1" />
           <entry key="gitignore" value="4" />
           <entry key="iml" value="3" />
-          <entry key="java" value="197" />
+          <entry key="java" value="239" />
           <entry key="md" value="4" />
-          <entry key="png" value="4" />
+          <entry key="png" value="2" />
           <entry key="prop" value="1" />
-          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="7" />
+          <entry key="CLASS" value="38" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="Image" value="5" />
-          <entry key="JAVA" value="197" />
+          <entry key="Image" value="3" />
+          <entry key="JAVA" value="239" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="29" />
+          <entry key="dummy" value="33" />
           <entry key="gitignore" value="27" />
-          <entry key="java" value="12216" />
-          <entry key="md" value="18" />
-          <entry key="txt" value="17" />
+          <entry key="java" value="15581" />
+          <entry key="md" value="49" />
+          <entry key="txt" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12216" />
-          <entry key="Markdown" value="18" />
-          <entry key="PLAIN_TEXT" value="73" />
+          <entry key="JAVA" value="15581" />
+          <entry key="Markdown" value="49" />
+          <entry key="PLAIN_TEXT" value="83" />
         </counts>
       </usages-collector>
     </session>
@@ -110,17 +122,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -171,18 +173,24 @@
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/UnsupportedFileDialog.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/entity/Prop.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/PropParser.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/UnsupportedFileDialog.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/Office2PDF.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/Office2PDFHandler.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDF.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/ThreadPool.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFHandler.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDF.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFCore.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayout.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstants.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstraints.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/FilePanel.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/ConsolePanel.java" />
       </list>
     </option>
   </component>
@@ -195,7 +203,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="234" />
     <option name="y" value="13" />
     <option name="width" value="1400" />
@@ -207,23 +215,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="PDFReader" type="58d84e3e:PackageViewProjectNode" />
-              <item name="PDFReader" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="PDFReader" type="58d84e3e:PackageViewProjectNode" />
-              <item name="PDFReader" type="616d4139:PackageViewModuleNode" />
-              <item name="org.tizzer.pdfreader" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -261,6 +252,22 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PDFReader" type="58d84e3e:PackageViewProjectNode" />
+              <item name="PDFReader" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="PDFReader" type="58d84e3e:PackageViewProjectNode" />
+              <item name="PDFReader" type="616d4139:PackageViewModuleNode" />
+              <item name="org.tizzer.pdfreader" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -268,10 +275,36 @@
               <item name="PDFReader" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDFReader" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="PDFReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDFReader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDFReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDFReader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pdfreader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDFReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDFReader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pdfreader" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDFReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDFReader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pdfreader" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,16 +314,17 @@
     <property name="SearchEverywhereHistoryKey" value="picker&#9;ACTION&#9;ShowColorPicker&#10;color&#9;ACTION&#9;ShowColorPicker" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534611240081" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533209993380" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="tags.panel.proportion" value="0.5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProjects\PDFReader\src\org\tizzer\pdfreader" />
       <recent name="D:\IDEAProjects\PDFReader\libs" />
       <recent name="D:\IDEAProjects\PDFReader\image" />
       <recent name="E:\IDEAProjects\PDFReader\libs" />
@@ -312,6 +346,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.BootApplication">
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BootApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.tizzer.pdfreader.BootApplication" />
       <module name="PDFReader" />
@@ -322,6 +364,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsolePanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.tizzer.pdfreader.view.panel.ConsolePanel" />
+      <module name="PDFReader" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilePanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.tizzer.pdfreader.view.panel.FilePanel" />
+      <module name="PDFReader" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -355,21 +413,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.BootApplication" />
       <item itemvalue="JUnit.BootApplication.openFolder" />
+      <item itemvalue="Application.FilePanel" />
+      <item itemvalue="Application.ConsolePanel" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BootApplication" />
+        <item itemvalue="Application.ConsolePanel" />
+        <item itemvalue="Application.FilePanel" />
         <item itemvalue="JUnit.BootApplication.openFolder" />
       </list>
     </recent_temporary>
@@ -415,24 +469,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="234" y="13" width="1400" height="1000" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22543353" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32910052" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49925372" weight="0.35585585" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838982" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49925372" visible="true" weight="0.35487288" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074625" side_tool="true" weight="0.29642445" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32995495" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32804233" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" />
@@ -455,141 +508,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init this project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init this project" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/Boolean.java" />
-    <entry file="jar://$PROJECT_DIR$/libs/jacob.jar!/com/jacob/com/Variant.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/VerticalFlowLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1704">
-          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/configuration.xml" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/ImageIcon.java" />
-    <entry file="file://$PROJECT_DIR$/image/error_off.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/border/EmptyBorder.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/border/LineBorder.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/net/URL.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/LogListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/AbstractLayoutManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/AbstractButton.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/ProcessListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="46" lean-forward="true" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/CountListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/text/JTextComponent.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/JComponent.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/JEditorPane.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/concurrent/Executor.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/concurrent/Executors.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/ThreadLocal.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/concurrent/ExecutorService.java" />
-    <entry file="file://$PROJECT_DIR$/image/busy.gif" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/java/awt/Component.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/concurrent/Future.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/JDialog.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/java/awt/Window.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/JFileChooser.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/entity.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/entity/Prop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/io/File.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/io/PrintStream.java" />
-    <entry file="file://$PROJECT_DIR$/image/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/UnsupportedFileDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-431">
-          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/parts/SystemMenuBar.java" />
     <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/ThreadPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/PropParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3984">
-          <caret line="172" column="10" selection-start-line="172" selection-start-column="10" selection-end-line="172" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -608,30 +535,187 @@
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2424">
-          <caret line="104" column="93" selection-start-line="104" selection-start-column="93" selection-end-line="104" selection-end-column="93" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor>
+            <caret column="11" selection-start-column="11" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image/word.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/sun/swing/FilePane.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35724">
+          <caret line="1642" column="21" selection-start-line="1642" selection-start-column="21" selection-end-line="1642" selection-end-column="21" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml">
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2592">
+          <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3984">
+          <caret line="172" column="10" selection-start-line="172" selection-start-column="10" selection-end-line="172" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/AbstractLayoutManager.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/AccordionLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/AlignLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/BreadcrumbLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/ComponentPanelLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/FormLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/GroupLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/HorizontalFlowLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/HorizontalOverflowLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/MultiLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/OverlayData.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/OverlayLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/OverlayLocation.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/PreferredCardLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/RowData.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/SingleFiledLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/SlidingLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/StackLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/ToolbarLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/VerticalFlowLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/WrapFlowLayout.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/TableLayoutConstraints.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/TableLayoutConstants.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/weblaf-complete-1.29.jar!/com/alee/extended/layout/TableLayout.class" />
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstants.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/markdown-navigator.xml">
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstraints.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/image/start.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="5342" column="21" selection-start-line="5342" selection-start-column="21" selection-end-line="5342" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Cursor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="392" column="11" selection-start-line="392" selection-start-column="11" selection-end-line="392" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Font.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="1933" column="16" selection-start-line="1933" selection-start-column="16" selection-end-line="1933" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/AbstractLayoutManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/entity/Prop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/GridLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="164" column="11" selection-start-line="164" selection-start-column="11" selection-end-line="164" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="95" column="40" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/javax/swing/JPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state relative-caret-position="1944">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/FilePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="244" column="15" selection-start-line="244" selection-start-column="15" selection-end-line="244" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/ConsolePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2880">
+          <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/PropParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
         </state>
       </provider>
     </entry>

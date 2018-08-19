@@ -1,9 +1,9 @@
-package org.tizzer.pdfreader.callback;
+package org.tizzer.pdfreader.util.callback;
 
 public interface CountListener {
-    void countWord(int num);
+    void countWORD(int num);
 
-    void countPpt(int num);
+    void countPPT(int num);
 
     void countExcel(int num);
 
