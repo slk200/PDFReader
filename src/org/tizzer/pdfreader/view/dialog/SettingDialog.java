@@ -17,17 +17,17 @@ public class SettingDialog extends JDialog {
     private JButton mScanBtn;
     private JFileChooser mFileChooser;
 
-    public static void display(Component component) {
-        SettingDialog settingDialog = new SettingDialog();
-        settingDialog.setLocationRelativeTo(component);
-        settingDialog.setVisible(true);
-    }
-
     private SettingDialog() {
         initComponents();
         initLayout();
         initListeners();
         initProperties();
+    }
+
+    public static void display(Component component) {
+        SettingDialog settingDialog = new SettingDialog();
+        settingDialog.setLocationRelativeTo(component);
+        settingDialog.setVisible(true);
     }
 
     private void initComponents() {

@@ -1,13 +1,11 @@
 <component name="libraryTable">
   <library name="libs">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/libs" />
+      <root url="jar://$PROJECT_DIR$/libs/pdfbox-app-2.0.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/beautyeye_lnf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jacob.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <NATIVE>
-      <root url="file://$PROJECT_DIR$/libs" />
-    </NATIVE>
     <SOURCES />
-    <jarDirectory url="file://$PROJECT_DIR$/libs" recursive="false" />
   </library>
 </component>

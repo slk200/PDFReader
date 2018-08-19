@@ -1,11 +1,11 @@
 package org.tizzer.pdfreader;
 
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 import org.tizzer.pdfreader.constants.SystemConstants;
 import org.tizzer.pdfreader.view.Window;
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.awt.*;
 import java.util.Enumeration;
 
@@ -13,6 +13,7 @@ public class BootApplication {
 
     /**
      * initialize all components' font family
+     *
      * @param font
      */
     private static void initGlobalFont(Font font) {
@@ -28,10 +29,7 @@ public class BootApplication {
 
     public static void main(String[] args) throws Exception {
         initGlobalFont(SystemConstants.defaultFont);
-        UIManager.put("RootPane.setupButtonVisible", false);
-        BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
-        BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
-        BeautyEyeLNFHelper.launchBeautyEyeLNF();
+        UIManager.setLookAndFeel(new NimbusLookAndFeel());
         SwingUtilities.invokeLater(Window::new);
     }
 

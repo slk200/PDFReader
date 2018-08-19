@@ -12,17 +12,17 @@ public class UnsupportedFileDialog extends JDialog {
 
     private JEditorPane mEditorPane;
 
-    public static void display(Component component, StringBuilder html) {
-        UnsupportedFileDialog unsupportedFileDialog = new UnsupportedFileDialog(html);
-        unsupportedFileDialog.setLocationRelativeTo(component);
-        unsupportedFileDialog.setVisible(true);
-    }
-
     private UnsupportedFileDialog(StringBuilder html) {
         initComponents(html);
         initLayout();
         initListeners();
         initProperties();
+    }
+
+    public static void display(Component component, StringBuilder html) {
+        UnsupportedFileDialog unsupportedFileDialog = new UnsupportedFileDialog(html);
+        unsupportedFileDialog.setLocationRelativeTo(component);
+        unsupportedFileDialog.setVisible(true);
     }
 
     private void initComponents(StringBuilder html) {

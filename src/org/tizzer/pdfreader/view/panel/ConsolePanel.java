@@ -100,6 +100,7 @@ public class ConsolePanel extends JPanel {
         mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileoff);
         mUnsupportedFileBtn.setEnabled(false);
         mConsole.setText(null);
+        fileSet = null;
     }
 
     /**

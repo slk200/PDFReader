@@ -128,14 +128,6 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
         }
     }
 
-    public void setColumn(double[] column) {
-        this.setCr(0, column);
-    }
-
-    public void setRow(double[] row) {
-        this.setCr(1, row);
-    }
-
     protected void setCr(int z, double[] size) {
         this.crSpec[z] = new double[size.length];
         System.arraycopy(size, 0, this.crSpec[z], 0, this.crSpec[z].length);
@@ -172,10 +164,18 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
         return column;
     }
 
+    public void setColumn(double[] column) {
+        this.setCr(0, column);
+    }
+
     public double[] getRow() {
         double[] row = new double[this.crSpec[1].length];
         System.arraycopy(this.crSpec[1], 0, row, 0, row.length);
         return row;
+    }
+
+    public void setRow(double[] row) {
+        this.setCr(1, row);
     }
 
     public double getColumn(int i) {
@@ -198,16 +198,16 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
         return this.hGap;
     }
 
-    public int getVGap() {
-        return this.vGap;
-    }
-
     public void setHGap(int hGap) {
         if (hGap >= 0) {
             this.hGap = hGap;
         } else {
             throw new IllegalArgumentException("Parameter hGap must be non-negative.");
         }
+    }
+
+    public int getVGap() {
+        return this.vGap;
     }
 
     public void setVGap(int vGap) {
