@@ -112,17 +112,18 @@ public class FilePanel extends JPanel {
         double p = TableLayout.PREFERRED;
         double f = TableLayout.FILL;
         double g = 5;
-        this.setLayout(new TableLayout(new double[][]{{g, f, g, f, g, f, g, f, g}, {g, p, g, f, g, p, g, p, g}}));
+        this.setLayout(new TableLayout(new double[][]{{g, f, g, f, g, f, g, f, g}, {g, p, g, p, g, f, g, p, g, p, g}}));
         this.add(mFilePath, "1,1,3,1");
         this.add(mScanBtn, "5,1");
         this.add(mAnalysisBtn, "7,1");
-        this.add(mTablePane, "1,3,7,3");
-        this.add(mWordLabel, "1,5");
-        this.add(mPptLabel, "3,5");
-        this.add(mExcelLabel, "5,5");
-        this.add(mPDFLabel, "7,5");
-        this.add(mPageLabel, "1,7");
-        this.add(mCalcBtn, "5,7,7,7");
+        this.add(mProgress, "1,3,7,3");
+        this.add(mTablePane, "1,5,7,5");
+        this.add(mWordLabel, "1,7");
+        this.add(mPptLabel, "3,7");
+        this.add(mExcelLabel, "5,7");
+        this.add(mPDFLabel, "7,7");
+        this.add(mPageLabel, "1,9,7,9");
+        this.add(mCalcBtn, "5,9,7,9");
     }
 
     /**

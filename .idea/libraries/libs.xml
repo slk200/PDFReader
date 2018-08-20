@@ -2,7 +2,6 @@
   <library name="libs">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/pdfbox-app-2.0.11.jar!/" />
-      <root url="jar://$PROJECT_DIR$/libs/beautyeye_lnf.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/jacob.jar!/" />
     </CLASSES>
     <JAVADOC />

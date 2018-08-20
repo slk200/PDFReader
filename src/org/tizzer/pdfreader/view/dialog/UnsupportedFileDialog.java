@@ -43,8 +43,8 @@ public class UnsupportedFileDialog extends JDialog {
             if (event.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                 try {
                     Desktop.getDesktop().open(new File(event.getURL().getFile()));
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         });
