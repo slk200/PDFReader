@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="PDFReader:jar">
+  <artifact type="jar" name="PDFReader:jar">
     <output-path>E:/</output-path>
     <root id="archive" name="PDFReader.jar">
       <element id="module-output" name="PDFReader" />

@@ -43,7 +43,6 @@ public interface SystemConstants {
     ImageIcon _imgpdf = new ImageIcon("image/pdf.png");
     ImageIcon _imgpage = new ImageIcon("image/page.png");
     ImageIcon _imgcalc = new ImageIcon("image/calc.png");
-    ImageIcon _imglogo = new ImageIcon("image/logo.png");
 
     Color _fieldcolor = new Color(232, 232, 232);
 

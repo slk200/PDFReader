@@ -77,11 +77,11 @@ public class ConsolePanel extends JPanel {
         mUnsupportedFileBtn.addActionListener(event -> {
             ThreadPool.submit(() -> {
                 mUnsupportedFileBtn.setEnabled(false);
-                StringBuilder unsupportedFileHtml = new StringBuilder();
+                StringBuilder unsupportedFileHtml = new StringBuilder("<body bgcolor=#3c3f41>");
                 for (String file : fileSet) {
                     unsupportedFileHtml.append("<a href='file://")
                             .append(file)
-                            .append("'>")
+                            .append("' style='color:white'>")
                             .append(file)
                             .append("</a><br/><br/>");
                 }

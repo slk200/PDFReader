@@ -1,11 +1,11 @@
 package org.tizzer.pdfreader;
 
+import com.bulenkov.darcula.DarculaLaf;
 import org.tizzer.pdfreader.constants.SystemConstants;
 import org.tizzer.pdfreader.view.Window;
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.awt.*;
 import java.util.Enumeration;
 
@@ -29,7 +29,7 @@ public class BootApplication {
 
     public static void main(String[] args) throws Exception {
         initGlobalFont(SystemConstants.defaultFont);
-        UIManager.setLookAndFeel(new NimbusLookAndFeel());
+        UIManager.setLookAndFeel(new DarculaLaf());
         SwingUtilities.invokeLater(Window::new);
     }
 

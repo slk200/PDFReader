@@ -52,7 +52,6 @@ public class UnsupportedFileDialog extends JDialog {
 
     private void initProperties() {
         this.setTitle(SystemConstants.DIALOG_TITLE);
-        this.setIconImage(SystemConstants._imglogo.getImage());
         this.setSize(640, 480);
         this.setModal(true);
     }

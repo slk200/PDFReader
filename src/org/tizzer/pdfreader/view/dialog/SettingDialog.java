@@ -83,7 +83,6 @@ public class SettingDialog extends JDialog {
 
     private void initProperties() {
         this.setTitle(SystemConstants.PREFERENCE);
-        this.setIconImage(SystemConstants._imglogo.getImage());
         this.pack();
         this.setModal(true);
     }
