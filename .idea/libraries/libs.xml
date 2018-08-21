@@ -4,7 +4,6 @@
       <root url="jar://$PROJECT_DIR$/libs/pdfbox-app-2.0.11.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/jacob.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/darcula.jar!/" />
-      <root url="jar://$PROJECT_DIR$/libs/LookAndFeelTest-latest-SNAPSHOT-all.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,10 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="PDFReader:jar">
+  <artifact type="jar" build-on-make="true" name="PDFReader:jar">
     <output-path>E:/</output-path>
     <root id="archive" name="PDFReader.jar">
       <element id="module-output" name="PDFReader" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/pdfbox-app-2.0.11.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/jacob.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/darcula.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
