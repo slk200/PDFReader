@@ -1,10 +1,12 @@
 package org.tizzer.pdfreader.view;
 
+import com.bulenkov.darcula.DarculaLaf;
 import org.tizzer.pdfreader.constants.SystemConstants;
 import org.tizzer.pdfreader.util.ThreadPool;
 import org.tizzer.pdfreader.util.WPS2PDFHandler;
 import org.tizzer.pdfreader.util.callback.CountListener;
 import org.tizzer.pdfreader.view.dialog.SettingDialog;
+import org.tizzer.pdfreader.view.dialog.TaoBaoDialog;
 import org.tizzer.pdfreader.view.panel.ConsolePanel;
 import org.tizzer.pdfreader.view.panel.FilePanel;
 
@@ -18,8 +20,13 @@ public class Window extends JFrame {
     //menu
     private JMenuBar mMenuBar;
     private JMenu mFileMenu;
-    private JMenuItem mSettingMenuItem;
-    private JMenuItem mExitMenuItem;
+    private JMenuItem mSettingItem;
+    private JMenuItem mExitItem;
+    private JMenu mThemeMenu;
+    private JRadioButtonMenuItem mSystemItem;
+    private JRadioButtonMenuItem mDarculaItem;
+    private JMenu mHelpMenu;
+    private JMenuItem mInfoItem;
     //components
     private FilePanel mFilePanel;
     private ConsolePanel mConsolePanel;
@@ -44,14 +51,30 @@ public class Window extends JFrame {
         mFileMenu.setMnemonic(KeyEvent.VK_F);
         mFileMenu.setMnemonic('F');
 
-        mSettingMenuItem = new JMenuItem(SystemConstants.SETTING);
-        mSettingMenuItem.setIcon(SystemConstants._imgprop);
-        mSettingMenuItem.setMnemonic(KeyEvent.VK_P);
-        mSettingMenuItem.setMnemonic('S');
+        mSettingItem = new JMenuItem(SystemConstants.SETTING);
+        mSettingItem.setIcon(SystemConstants._imgprop);
+        mSettingItem.setMnemonic(KeyEvent.VK_P);
+        mSettingItem.setMnemonic('S');
 
-        mExitMenuItem = new JMenuItem(SystemConstants.EXIT);
-        mExitMenuItem.setMnemonic(KeyEvent.VK_E);
-        mExitMenuItem.setMnemonic('E');
+        mExitItem = new JMenuItem(SystemConstants.EXIT);
+        mExitItem.setMnemonic(KeyEvent.VK_E);
+        mExitItem.setMnemonic('E');
+
+        mThemeMenu = new JMenu("主题 (T)");
+        mThemeMenu.setMnemonic(KeyEvent.VK_T);
+        mThemeMenu.setMnemonic('T');
+        mDarculaItem = new JRadioButtonMenuItem("Darcula");
+        mDarculaItem.setSelected(true);
+        mSystemItem = new JRadioButtonMenuItem("System");
+
+        mHelpMenu = new JMenu("帮助 (H)");
+        mHelpMenu.setMnemonic(KeyEvent.VK_H);
+        mHelpMenu.setMnemonic('H');
+        mInfoItem = new JMenuItem("宝贝 (I)");
+        mInfoItem.setIcon(SystemConstants._imgsale);
+        mInfoItem.setMnemonic(KeyEvent.VK_I);
+        mInfoItem.setMnemonic('I');
+
 
         mFilePanel = new FilePanel();
         mConsolePanel = new ConsolePanel();
@@ -61,11 +84,20 @@ public class Window extends JFrame {
      * initialize layout
      */
     private void initLayout() {
-        mMenuBar.add(mFileMenu);
-        mFileMenu.add(mSettingMenuItem);
-        mFileMenu.addSeparator();
-        mFileMenu.add(mExitMenuItem);
         this.setJMenuBar(mMenuBar);
+        mMenuBar.add(mFileMenu);
+        mMenuBar.add(mThemeMenu);
+        mMenuBar.add(mHelpMenu);
+
+        mFileMenu.add(mSettingItem);
+        mFileMenu.addSeparator();
+        mFileMenu.add(mExitItem);
+        mThemeMenu.add(mDarculaItem);
+        mThemeMenu.add(mSystemItem);
+        mHelpMenu.add(mInfoItem);
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(mDarculaItem);
+        buttonGroup.add(mSystemItem);
 
         this.setLayout(new GridLayout(1, 2));
         this.add(mFilePanel);
@@ -76,12 +108,37 @@ public class Window extends JFrame {
      * initialize actions
      */
     private void initListeners() {
-        mSettingMenuItem.addActionListener(event -> {
+        mSettingItem.addActionListener(event -> {
             ThreadPool.submit(() -> SettingDialog.display(Window.this));
         });
-
-        mExitMenuItem.addActionListener(event -> {
+        mExitItem.addActionListener(event -> {
             System.exit(0);
+        });
+        mDarculaItem.addActionListener(event -> {
+            if (!UIManager.getLookAndFeel().getName().equals(DarculaLaf.NAME)) {
+                try {
+                    UIManager.setLookAndFeel(new DarculaLaf());
+                    SwingUtilities.updateComponentTreeUI(this);
+                } catch (UnsupportedLookAndFeelException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("do it 1");
+            }
+        });
+        mSystemItem.addActionListener(event -> {
+            if (!UIManager.getLookAndFeel().getName().equals(UIManager.getSystemLookAndFeelClassName())) {
+                try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    SwingUtilities.updateComponentTreeUI(this);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                System.out.println("do it 2");
+            }
+
+        });
+        mInfoItem.addActionListener(event -> {
+            TaoBaoDialog.newInstance();
         });
         mFilePanel.setAnalysisAction(event -> {
             mFilePanel.reset();

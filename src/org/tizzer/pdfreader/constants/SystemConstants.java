@@ -31,6 +31,8 @@ public interface SystemConstants {
     String TEXT_HTML = "text/html";
 
     ImageIcon _imgprop = new ImageIcon("image/prop.png");
+    ImageIcon _imgsale = new ImageIcon("image/sale.png");
+    ImageIcon _imgtaobao = new ImageIcon("image/taobao.jpg");
     ImageIcon _imgfolder = new ImageIcon("image/folder.png");
     ImageIcon _imgstart = new ImageIcon("image/start.png");
     ImageIcon _imgerroroff = new ImageIcon("image/error_off.png");

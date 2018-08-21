@@ -20,7 +20,6 @@ public class FilePanel extends JPanel {
     private JTextField mFilePath;
     private JButton mScanBtn;
     private JButton mAnalysisBtn;
-    private JFileChooser mFileChooser;
     private DefaultTableModel mTableModel;
     private JScrollPane mTablePane;
     private JProgressBar mProgress;
@@ -62,10 +61,6 @@ public class FilePanel extends JPanel {
 
         mAnalysisBtn = new JButton(SystemConstants.ANALYSIS);
         mAnalysisBtn.setIcon(SystemConstants._imgstart);
-
-        mFileChooser = new JFileChooser();
-        mFileChooser.setCurrentDirectory(mSelectedFile);
-        mFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
         mTableModel = new DefaultTableModel(null, SystemConstants.TABLE_TITLE);
         JTable table = new JTable(mTableModel) {
@@ -131,19 +126,25 @@ public class FilePanel extends JPanel {
      */
     private void initListeners() {
         mScanBtn.addActionListener(event -> {
-            mFileChooser.showDialog(mScanBtn.getRootPane(), SystemConstants.CONFIRM);
-            if (mFileChooser.getSelectedFile() != null) {
-                mSelectedFile = mFileChooser.getSelectedFile();
-                mFilePath.setText(mFileChooser.getSelectedFile().getAbsolutePath());
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setCurrentDirectory(mSelectedFile);
+            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            fileChooser.showDialog(mScanBtn.getRootPane(), SystemConstants.CONFIRM);
+            if (fileChooser.getSelectedFile() != null) {
+                mSelectedFile = fileChooser.getSelectedFile();
+                mFilePath.setText(fileChooser.getSelectedFile().getAbsolutePath());
             }
         });
         mFilePath.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent event) {
-                mFileChooser.showDialog(mFilePath.getRootPane(), SystemConstants.CONFIRM);
-                if (mFileChooser.getSelectedFile() != null) {
-                    mSelectedFile = mFileChooser.getSelectedFile();
-                    mFilePath.setText(mFileChooser.getSelectedFile().getAbsolutePath());
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(mSelectedFile);
+                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                fileChooser.showDialog(mFilePath.getRootPane(), SystemConstants.CONFIRM);
+                if (fileChooser.getSelectedFile() != null) {
+                    mSelectedFile = fileChooser.getSelectedFile();
+                    mFilePath.setText(fileChooser.getSelectedFile().getAbsolutePath());
                 }
             }
         });

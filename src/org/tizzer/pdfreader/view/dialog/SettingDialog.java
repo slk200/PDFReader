@@ -15,7 +15,6 @@ public class SettingDialog extends JDialog {
 
     private JTextField mFileDirectory;
     private JButton mScanBtn;
-    private JFileChooser mFileChooser;
 
     private SettingDialog() {
         initComponents();
@@ -37,17 +36,6 @@ public class SettingDialog extends JDialog {
 
         mScanBtn = new JButton(SystemConstants.SCAN);
         mScanBtn.setIcon(SystemConstants._imgfolder);
-
-        mFileChooser = new JFileChooser();
-        mFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-
-        if (Window.currentDirectory != null) {
-            File tempFile = new File(Window.currentDirectory);
-            if (tempFile.exists()) {
-                mFileDirectory.setText(Window.currentDirectory);
-                mFileChooser.setCurrentDirectory(tempFile);
-            }
-        }
     }
 
     private void initLayout() {
@@ -62,21 +50,39 @@ public class SettingDialog extends JDialog {
         mFileDirectory.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent event) {
-                mFileChooser.showDialog(SettingDialog.this, SystemConstants.CONFIRM);
-                if (mFileChooser.getSelectedFile() != null) {
-                    PropParser.writeProp(mFileChooser.getSelectedFile().getAbsolutePath());
-                    mFileDirectory.setText(mFileChooser.getSelectedFile().getAbsolutePath());
-                    Window.currentDirectory = mFileChooser.getSelectedFile().getAbsolutePath();
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                if (Window.currentDirectory != null) {
+                    File tempFile = new File(Window.currentDirectory);
+                    if (tempFile.exists()) {
+                        mFileDirectory.setText(Window.currentDirectory);
+                        fileChooser.setCurrentDirectory(tempFile);
+                    }
+                }
+                fileChooser.showDialog(SettingDialog.this, SystemConstants.CONFIRM);
+                if (fileChooser.getSelectedFile() != null) {
+                    PropParser.writeProp(fileChooser.getSelectedFile().getAbsolutePath());
+                    mFileDirectory.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                    Window.currentDirectory = fileChooser.getSelectedFile().getAbsolutePath();
                 }
             }
         });
 
         mScanBtn.addActionListener(event -> {
-            mFileChooser.showDialog(SettingDialog.this, SystemConstants.CONFIRM);
-            if (mFileChooser.getSelectedFile() != null) {
-                PropParser.writeProp(mFileChooser.getSelectedFile().getAbsolutePath());
-                mFileDirectory.setText(mFileChooser.getSelectedFile().getAbsolutePath());
-                Window.currentDirectory = mFileChooser.getSelectedFile().getAbsolutePath();
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            if (Window.currentDirectory != null) {
+                File tempFile = new File(Window.currentDirectory);
+                if (tempFile.exists()) {
+                    mFileDirectory.setText(Window.currentDirectory);
+                    fileChooser.setCurrentDirectory(tempFile);
+                }
+            }
+            fileChooser.showDialog(SettingDialog.this, SystemConstants.CONFIRM);
+            if (fileChooser.getSelectedFile() != null) {
+                PropParser.writeProp(fileChooser.getSelectedFile().getAbsolutePath());
+                mFileDirectory.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                Window.currentDirectory = fileChooser.getSelectedFile().getAbsolutePath();
             }
         });
     }
