@@ -9,17 +9,17 @@ import java.io.File;
 import java.io.IOException;
 
 public class WPS2PDFHandler {
-    //计数器
+    //counter
     private int WORD_NUM = 0;
     private int PPT_NUM = 0;
     private int EXCEL_NUM = 0;
     private int PDF_NUM = 0;
     private int PAGE_NUM = 0;
-    //监听器
+    //listener
     private LogListener logListener;
     private CountListener countListener;
     private ProcessListener processListener;
-    //启动信号
+    //signal of start
     private boolean signal;
 
     public boolean isStarted() {
@@ -31,7 +31,7 @@ public class WPS2PDFHandler {
     }
 
     /**
-     * 控制台监听器
+     * console listener
      *
      * @param logListener
      */
@@ -40,7 +40,7 @@ public class WPS2PDFHandler {
     }
 
     /**
-     * 计数监听器
+     * counter listener
      *
      * @param countListener
      */
@@ -49,7 +49,7 @@ public class WPS2PDFHandler {
     }
 
     /**
-     * 无法转换文件监听器
+     * unsupported listener
      *
      * @param processListener
      */

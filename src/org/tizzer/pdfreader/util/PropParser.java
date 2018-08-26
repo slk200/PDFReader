@@ -1,24 +1,56 @@
 package org.tizzer.pdfreader.util;
 
+import org.tizzer.pdfreader.constants.RuntimeConstants;
+import org.tizzer.pdfreader.entity.Prop;
+import org.tizzer.pdfreader.view.Theme;
+
 import java.io.*;
 
 public class PropParser {
 
-    public static String readProp() {
+    /**
+     * read local config
+     *
+     * @return
+     */
+    public static void initConfig() {
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("config.prop"));
-            String defaultPath = ois.readUTF();
+            File file = new File("config.prop");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+            Prop prop = (Prop) ois.readObject();
+            Theme theme = prop.getTheme();
+            if (theme == null) {
+                RuntimeConstants.currentTheme = Theme.DARK;
+            }
+            RuntimeConstants.currentTheme = theme;
+            String directory = prop.getFile();
+            if (directory != null && new File(directory).exists()) {
+                RuntimeConstants.currentDirectory = directory;
+            }
+            theme = null;
+            directory = null;
+            prop = null;
             ois.close();
-            return defaultPath;
-        } catch (IOException e) {
-            return null;
+        } catch (IOException | ClassNotFoundException e) {
+            if (e instanceof IOException) {
+                RuntimeConstants.currentTheme = Theme.DARK;
+                RuntimeConstants.currentDirectory = null;
+            }
         }
     }
 
-    public static void writeProp(String defaultPath) {
+    /**
+     * write local config
+     *
+     * @param prop
+     */
+    public static void writeProp(Prop prop) {
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("config.prop"));
-            oos.writeUTF(defaultPath);
+            oos.writeObject(prop);
             oos.flush();
             oos.close();
         } catch (IOException e) {

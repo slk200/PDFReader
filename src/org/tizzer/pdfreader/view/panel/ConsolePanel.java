@@ -1,8 +1,10 @@
 package org.tizzer.pdfreader.view.panel;
 
+import org.tizzer.pdfreader.constants.RuntimeConstants;
 import org.tizzer.pdfreader.constants.SystemConstants;
 import org.tizzer.pdfreader.layout.TableLayout;
 import org.tizzer.pdfreader.util.ThreadPool;
+import org.tizzer.pdfreader.view.Theme;
 import org.tizzer.pdfreader.view.dialog.UnsupportedFileDialog;
 
 import javax.swing.*;
@@ -21,6 +23,8 @@ public class ConsolePanel extends JPanel {
     private Set<String> fileSet;
     //flag of scrolling to bottom
     private int isConsoleNeedBottom = 0;
+    //flag of state
+    private boolean isOn;
 
     public ConsolePanel() {
         initComponents();
@@ -33,10 +37,8 @@ public class ConsolePanel extends JPanel {
      */
     private void initComponents() {
         mErrorLabel = new JLabel(SystemConstants.NO_ERROR);
-        mErrorLabel.setIcon(SystemConstants._imgerroroff);
 
         mUnsupportedFileBtn = new JButton(SystemConstants.LOC_FILE);
-        mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileoff);
         mUnsupportedFileBtn.setEnabled(false);
 
         mConsole = new JTextArea(0, 40);
@@ -87,6 +89,7 @@ public class ConsolePanel extends JPanel {
                 }
                 UnsupportedFileDialog.display(mUnsupportedFileBtn.getRootPane(), unsupportedFileHtml);
                 mUnsupportedFileBtn.setEnabled(true);
+                unsupportedFileHtml = null;
             });
         });
     }
@@ -95,9 +98,9 @@ public class ConsolePanel extends JPanel {
      * reset all components' status
      */
     public void reset() {
+        isOn = false;
         mErrorLabel.setText(SystemConstants.NO_ERROR);
-        mErrorLabel.setIcon(SystemConstants._imgerroroff);
-        mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileoff);
+        performThemeChanged(RuntimeConstants.currentTheme);
         mUnsupportedFileBtn.setEnabled(false);
         mConsole.setText(null);
         fileSet = null;
@@ -120,6 +123,7 @@ public class ConsolePanel extends JPanel {
      * @param directory
      */
     public void processTask(String directory) {
+        isOn = true;
         if (fileSet == null) {
             fileSet = new HashSet<>();
             mErrorLabel.setText(SystemConstants.EXIST_ERROR);
@@ -135,6 +139,21 @@ public class ConsolePanel extends JPanel {
         if (fileSet != null) {
             mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileon);
             mUnsupportedFileBtn.setEnabled(true);
+        }
+    }
+
+    public void performThemeChanged(Theme theme) {
+        if (!isOn) {
+            switch (theme) {
+                case LIGHT:
+                    mErrorLabel.setIcon(SystemConstants._imgerroroffdark);
+                    mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileoffdark);
+                    break;
+                case DARK:
+                    mErrorLabel.setIcon(SystemConstants._imgerroroff);
+                    mUnsupportedFileBtn.setIcon(SystemConstants._imglocfileoff);
+                    break;
+            }
         }
     }
 }

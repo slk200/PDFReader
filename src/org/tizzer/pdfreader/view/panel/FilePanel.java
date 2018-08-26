@@ -1,9 +1,9 @@
 package org.tizzer.pdfreader.view.panel;
 
+import org.tizzer.pdfreader.constants.RuntimeConstants;
 import org.tizzer.pdfreader.constants.SystemConstants;
 import org.tizzer.pdfreader.layout.TableLayout;
-import org.tizzer.pdfreader.util.PropParser;
-import org.tizzer.pdfreader.view.Window;
+import org.tizzer.pdfreader.view.Theme;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -44,23 +44,17 @@ public class FilePanel extends JPanel {
      * initialize components
      */
     private void initComponents() {
-        Window.currentDirectory = PropParser.readProp();
         mFilePath = new JTextField();
         mFilePath.setEditable(false);
         mFilePath.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        File tempFile = new File(Window.currentDirectory);
-        if (Window.currentDirectory != null) {
-            if (tempFile.exists()) {
-                this.mSelectedFile = tempFile;
-                mFilePath.setText(Window.currentDirectory);
-            }
+        if (RuntimeConstants.currentDirectory != null) {
+            this.mSelectedFile = new File(RuntimeConstants.currentDirectory);
+            mFilePath.setText(RuntimeConstants.currentDirectory);
         }
 
         mScanBtn = new JButton(SystemConstants.SCAN);
-        mScanBtn.setIcon(SystemConstants._imgfolder);
 
         mAnalysisBtn = new JButton(SystemConstants.ANALYSIS);
-        mAnalysisBtn.setIcon(SystemConstants._imgstart);
 
         mTableModel = new DefaultTableModel(null, SystemConstants.TABLE_TITLE);
         JTable table = new JTable(mTableModel) {
@@ -82,22 +76,16 @@ public class FilePanel extends JPanel {
         mProgress.setVisible(false);
 
         mWordLabel = new JLabel(SystemConstants.WORD);
-        mWordLabel.setIcon(SystemConstants._imgword);
 
         mPptLabel = new JLabel(SystemConstants.PPT);
-        mPptLabel.setIcon(SystemConstants._imgppt);
 
         mExcelLabel = new JLabel(SystemConstants.EXCEL);
-        mExcelLabel.setIcon(SystemConstants._imgexcel);
 
         mPDFLabel = new JLabel(SystemConstants.PDF);
-        mPDFLabel.setIcon(SystemConstants._imgpdf);
 
         mPageLabel = new JLabel(SystemConstants.PAGE);
-        mPageLabel.setIcon(SystemConstants._imgpage);
 
         mCalcBtn = new JButton(SystemConstants.CALC);
-        mCalcBtn.setIcon(SystemConstants._imgcalc);
     }
 
     /**
@@ -257,5 +245,35 @@ public class FilePanel extends JPanel {
     public void overTask() {
         mProgress.setVisible(false);
         mAnalysisBtn.setEnabled(true);
+    }
+
+    /**
+     * perform the components' icon
+     *
+     * @param theme
+     */
+    public void performThemeChanged(Theme theme) {
+        switch (theme) {
+            case LIGHT:
+                mScanBtn.setIcon(SystemConstants._imgfolderdark);
+                mAnalysisBtn.setIcon(SystemConstants._imgstartdark);
+                mWordLabel.setIcon(SystemConstants._imgworddark);
+                mPptLabel.setIcon(SystemConstants._imgpptdark);
+                mExcelLabel.setIcon(SystemConstants._imgexceldark);
+                mPDFLabel.setIcon(SystemConstants._imgpdfdark);
+                mPageLabel.setIcon(SystemConstants._imgpagedark);
+                mCalcBtn.setIcon(SystemConstants._imgcalcdark);
+                break;
+            case DARK:
+                mScanBtn.setIcon(SystemConstants._imgfolder);
+                mAnalysisBtn.setIcon(SystemConstants._imgstart);
+                mWordLabel.setIcon(SystemConstants._imgword);
+                mPptLabel.setIcon(SystemConstants._imgppt);
+                mExcelLabel.setIcon(SystemConstants._imgexcel);
+                mPDFLabel.setIcon(SystemConstants._imgpdf);
+                mPageLabel.setIcon(SystemConstants._imgpage);
+                mCalcBtn.setIcon(SystemConstants._imgcalc);
+                break;
+        }
     }
 }

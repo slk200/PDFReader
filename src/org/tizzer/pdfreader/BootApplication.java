@@ -1,7 +1,10 @@
 package org.tizzer.pdfreader;
 
 import com.bulenkov.darcula.DarculaLaf;
+import org.tizzer.pdfreader.constants.RuntimeConstants;
 import org.tizzer.pdfreader.constants.SystemConstants;
+import org.tizzer.pdfreader.util.PropParser;
+import org.tizzer.pdfreader.view.Theme;
 import org.tizzer.pdfreader.view.Window;
 
 import javax.swing.*;
@@ -28,8 +31,13 @@ public class BootApplication {
     }
 
     public static void main(String[] args) throws Exception {
+        PropParser.initConfig();
         initGlobalFont(SystemConstants.defaultFont);
-        UIManager.setLookAndFeel(new DarculaLaf());
+        if (RuntimeConstants.currentTheme == Theme.LIGHT) {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } else {
+            UIManager.setLookAndFeel(new DarculaLaf());
+        }
         SwingUtilities.invokeLater(Window::new);
     }
 

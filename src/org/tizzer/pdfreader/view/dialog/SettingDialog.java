@@ -1,11 +1,13 @@
 package org.tizzer.pdfreader.view.dialog;
 
+import org.tizzer.pdfreader.constants.RuntimeConstants;
 import org.tizzer.pdfreader.constants.SystemConstants;
+import org.tizzer.pdfreader.entity.Prop;
 import org.tizzer.pdfreader.util.PropParser;
-import org.tizzer.pdfreader.view.Window;
+import org.tizzer.pdfreader.view.Theme;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -31,16 +33,22 @@ public class SettingDialog extends JDialog {
 
     private void initComponents() {
         mFileDirectory = new JTextField(20);
+        mFileDirectory.setText(RuntimeConstants.currentDirectory);
         mFileDirectory.setEditable(false);
-        mFileDirectory.setBackground(SystemConstants._fieldcolor);
+        mFileDirectory.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        mFileDirectory.setBackground(SystemConstants.fieldcolor);
 
         mScanBtn = new JButton(SystemConstants.SCAN);
-        mScanBtn.setIcon(SystemConstants._imgfolder);
+        if (RuntimeConstants.currentTheme == Theme.DARK) {
+            mScanBtn.setIcon(SystemConstants._imgfolder);
+        } else {
+            mScanBtn.setIcon(SystemConstants._imgfolderdark);
+        }
     }
 
     private void initLayout() {
-        JPanel bgPane = new JPanel();
-        bgPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        JPanel bgPane = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        bgPane.setBorder(new TitledBorder(SystemConstants.SET_DEFAULT));
         bgPane.add(mFileDirectory);
         bgPane.add(mScanBtn);
         this.add(bgPane);
@@ -52,43 +60,40 @@ public class SettingDialog extends JDialog {
             public void mouseClicked(MouseEvent event) {
                 JFileChooser fileChooser = new JFileChooser();
                 fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                if (Window.currentDirectory != null) {
-                    File tempFile = new File(Window.currentDirectory);
-                    if (tempFile.exists()) {
-                        mFileDirectory.setText(Window.currentDirectory);
-                        fileChooser.setCurrentDirectory(tempFile);
-                    }
+                if (RuntimeConstants.currentDirectory != null) {
+                    mFileDirectory.setText(RuntimeConstants.currentDirectory);
+                    fileChooser.setCurrentDirectory(new File(RuntimeConstants.currentDirectory));
                 }
                 fileChooser.showDialog(SettingDialog.this, SystemConstants.CONFIRM);
                 if (fileChooser.getSelectedFile() != null) {
-                    PropParser.writeProp(fileChooser.getSelectedFile().getAbsolutePath());
+                    PropParser.writeProp(new Prop(fileChooser.getSelectedFile().getAbsolutePath(), RuntimeConstants.currentTheme));
                     mFileDirectory.setText(fileChooser.getSelectedFile().getAbsolutePath());
-                    Window.currentDirectory = fileChooser.getSelectedFile().getAbsolutePath();
+                    RuntimeConstants.currentDirectory = fileChooser.getSelectedFile().getAbsolutePath();
                 }
+                fileChooser = null;
             }
         });
 
         mScanBtn.addActionListener(event -> {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            if (Window.currentDirectory != null) {
-                File tempFile = new File(Window.currentDirectory);
-                if (tempFile.exists()) {
-                    mFileDirectory.setText(Window.currentDirectory);
-                    fileChooser.setCurrentDirectory(tempFile);
-                }
+            if (RuntimeConstants.currentDirectory != null) {
+                mFileDirectory.setText(RuntimeConstants.currentDirectory);
+                fileChooser.setCurrentDirectory(new File(RuntimeConstants.currentDirectory));
             }
             fileChooser.showDialog(SettingDialog.this, SystemConstants.CONFIRM);
             if (fileChooser.getSelectedFile() != null) {
-                PropParser.writeProp(fileChooser.getSelectedFile().getAbsolutePath());
+                PropParser.writeProp(new Prop(fileChooser.getSelectedFile().getAbsolutePath(), RuntimeConstants.currentTheme));
                 mFileDirectory.setText(fileChooser.getSelectedFile().getAbsolutePath());
-                Window.currentDirectory = fileChooser.getSelectedFile().getAbsolutePath();
+                RuntimeConstants.currentDirectory = fileChooser.getSelectedFile().getAbsolutePath();
             }
+            fileChooser = null;
         });
     }
 
     private void initProperties() {
         this.setTitle(SystemConstants.PREFERENCE);
+        this.setResizable(false);
         this.pack();
         this.setModal(true);
     }

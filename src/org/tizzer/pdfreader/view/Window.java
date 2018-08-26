@@ -1,7 +1,10 @@
 package org.tizzer.pdfreader.view;
 
 import com.bulenkov.darcula.DarculaLaf;
+import org.tizzer.pdfreader.constants.RuntimeConstants;
 import org.tizzer.pdfreader.constants.SystemConstants;
+import org.tizzer.pdfreader.entity.Prop;
+import org.tizzer.pdfreader.util.PropParser;
 import org.tizzer.pdfreader.util.ThreadPool;
 import org.tizzer.pdfreader.util.WPS2PDFHandler;
 import org.tizzer.pdfreader.util.callback.CountListener;
@@ -15,8 +18,6 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Window extends JFrame {
-    //global scope
-    public static String currentDirectory;
     //menu
     private JMenuBar mMenuBar;
     private JMenu mFileMenu;
@@ -49,35 +50,39 @@ public class Window extends JFrame {
 
         mFileMenu = new JMenu(SystemConstants.FILE);
         mFileMenu.setMnemonic(KeyEvent.VK_F);
-        mFileMenu.setMnemonic('F');
+        mFileMenu.setMnemonic(SystemConstants.CH_F);
 
         mSettingItem = new JMenuItem(SystemConstants.SETTING);
-        mSettingItem.setIcon(SystemConstants._imgprop);
         mSettingItem.setMnemonic(KeyEvent.VK_P);
-        mSettingItem.setMnemonic('S');
+        mSettingItem.setMnemonic(SystemConstants.CH_P);
 
         mExitItem = new JMenuItem(SystemConstants.EXIT);
         mExitItem.setMnemonic(KeyEvent.VK_E);
-        mExitItem.setMnemonic('E');
+        mExitItem.setMnemonic(SystemConstants.CH_E);
 
-        mThemeMenu = new JMenu("主题 (T)");
+        mThemeMenu = new JMenu(SystemConstants.THEME);
         mThemeMenu.setMnemonic(KeyEvent.VK_T);
-        mThemeMenu.setMnemonic('T');
-        mDarculaItem = new JRadioButtonMenuItem("Darcula");
-        mDarculaItem.setSelected(true);
-        mSystemItem = new JRadioButtonMenuItem("System");
+        mThemeMenu.setMnemonic(SystemConstants.CH_T);
+        mDarculaItem = new JRadioButtonMenuItem(SystemConstants.DARCULA);
+        mSystemItem = new JRadioButtonMenuItem(SystemConstants.SYSTEM);
 
-        mHelpMenu = new JMenu("帮助 (H)");
+        mHelpMenu = new JMenu(SystemConstants.HELP);
         mHelpMenu.setMnemonic(KeyEvent.VK_H);
-        mHelpMenu.setMnemonic('H');
-        mInfoItem = new JMenuItem("宝贝 (I)");
-        mInfoItem.setIcon(SystemConstants._imgsale);
+        mHelpMenu.setMnemonic(SystemConstants.CH_H);
+        mInfoItem = new JMenuItem(SystemConstants.GOODS);
         mInfoItem.setMnemonic(KeyEvent.VK_I);
-        mInfoItem.setMnemonic('I');
-
+        mInfoItem.setMnemonic(SystemConstants.CH_I);
 
         mFilePanel = new FilePanel();
+        mFilePanel.performThemeChanged(RuntimeConstants.currentTheme);
         mConsolePanel = new ConsolePanel();
+        mConsolePanel.performThemeChanged(RuntimeConstants.currentTheme);
+        performThemeChanged(RuntimeConstants.currentTheme);
+        if (RuntimeConstants.currentTheme == Theme.DARK) {
+            mDarculaItem.setSelected(true);
+        } else {
+            mSystemItem.setSelected(true);
+        }
     }
 
     /**
@@ -108,38 +113,45 @@ public class Window extends JFrame {
      * initialize actions
      */
     private void initListeners() {
-        mSettingItem.addActionListener(event -> {
-            ThreadPool.submit(() -> SettingDialog.display(Window.this));
-        });
-        mExitItem.addActionListener(event -> {
-            System.exit(0);
-        });
+        mSettingItem.addActionListener(event -> ThreadPool.submit(() -> SettingDialog.display(Window.this)));
+
+        mExitItem.addActionListener(event -> System.exit(0));
+
         mDarculaItem.addActionListener(event -> {
-            if (!UIManager.getLookAndFeel().getName().equals(DarculaLaf.NAME)) {
+            if (RuntimeConstants.currentTheme == Theme.LIGHT) {
                 try {
+                    RuntimeConstants.currentTheme = Theme.DARK;
                     UIManager.setLookAndFeel(new DarculaLaf());
                     SwingUtilities.updateComponentTreeUI(this);
+                    mFilePanel.performThemeChanged(RuntimeConstants.currentTheme);
+                    mConsolePanel.performThemeChanged(RuntimeConstants.currentTheme);
+                    performThemeChanged(RuntimeConstants.currentTheme);
+                    PropParser.writeProp(new Prop(RuntimeConstants.currentDirectory, RuntimeConstants.currentTheme));
                 } catch (UnsupportedLookAndFeelException e) {
                     e.printStackTrace();
                 }
-                System.out.println("do it 1");
             }
         });
+
         mSystemItem.addActionListener(event -> {
-            if (!UIManager.getLookAndFeel().getName().equals(UIManager.getSystemLookAndFeelClassName())) {
+            if (RuntimeConstants.currentTheme == Theme.DARK) {
                 try {
+                    RuntimeConstants.currentTheme = Theme.LIGHT;
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                     SwingUtilities.updateComponentTreeUI(this);
+                    mFilePanel.performThemeChanged(RuntimeConstants.currentTheme);
+                    mConsolePanel.performThemeChanged(RuntimeConstants.currentTheme);
+                    performThemeChanged(RuntimeConstants.currentTheme);
+                    PropParser.writeProp(new Prop(RuntimeConstants.currentDirectory, RuntimeConstants.currentTheme));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.out.println("do it 2");
             }
 
         });
-        mInfoItem.addActionListener(event -> {
-            TaoBaoDialog.newInstance();
-        });
+
+        mInfoItem.addActionListener(event -> TaoBaoDialog.newInstance());
+
         mFilePanel.setAnalysisAction(event -> {
             mFilePanel.reset();
             mConsolePanel.reset();
@@ -163,6 +175,19 @@ public class Window extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
+    }
+
+    private void performThemeChanged(Theme theme) {
+        switch (theme) {
+            case LIGHT:
+                mSettingItem.setIcon(SystemConstants._imgpropdark);
+                mInfoItem.setIcon(SystemConstants._imgsaledark);
+                break;
+            case DARK:
+                mSettingItem.setIcon(SystemConstants._imgprop);
+                mInfoItem.setIcon(SystemConstants._imgsale);
+                break;
+        }
     }
 
     /**

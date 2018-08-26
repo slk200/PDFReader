@@ -11,7 +11,7 @@ class WPS2PDFCore {
     private static final Integer EXCEL_TO_PDF_OPERAND = 0;
 
     /**
-     * word转pdf
+     * word trans to pdf
      *
      * @param srcFilePath
      * @param pdfFilePath
@@ -27,7 +27,7 @@ class WPS2PDFCore {
             Object[] obj = new Object[]{
                     srcFilePath,
                     new Variant(false),
-                    new Variant(false),//是否只读
+                    new Variant(false),//is read only
                     new Variant(false),
                     new Variant("pwd")
             };
@@ -48,7 +48,7 @@ class WPS2PDFCore {
     }
 
     /**
-     * ppt转pdf
+     * ppt trans to pdf
      *
      * @param srcFilePath
      * @param pdfFilePath
@@ -63,8 +63,8 @@ class WPS2PDFCore {
             /*
              * call
              * param 4: ReadOnly
-             * param 5: Untitled指定文件是否有标题
-             * param 6: WithWindow指定文件是否可见
+             * param 5: Untitled:the pointed file isTitled
+             * param 6: WithWindow:the pointed file isVisible
              * */
             wpp = Dispatch.call(kwpp, "Open", srcFilePath, true, true, false).toDispatch();
             Dispatch.call(wpp, "SaveAs", pdfFilePath, PPT_TO_PDF_OPERAND);
@@ -82,7 +82,7 @@ class WPS2PDFCore {
     }
 
     /**
-     * excel转pdf
+     * excel trans to pdf
      *
      * @param inFilePath
      * @param outFilePath
@@ -103,11 +103,11 @@ class WPS2PDFCore {
                     new Variant(false)
             };
             et = Dispatch.invoke(ket, "Open", Dispatch.Method, obj, new int[9]).toDispatch();
-            // 转换格式
+            // trans form
             Object[] obj2 = new Object[]{
-                    new Variant(EXCEL_TO_PDF_OPERAND), // PDF格式=0
+                    new Variant(EXCEL_TO_PDF_OPERAND), // PDF=0
                     outFilePath,
-                    new Variant(0)  //0=标准 (生成的PDF图片不会变模糊) ; 1=最小文件
+                    new Variant(0)  //0=standard (生成的PDF图片不会变模糊) ; 1=最小文件
             };
             Dispatch.invoke(et, "ExportAsFixedFormat", Dispatch.Method, obj2, new int[1]);
         } catch (Exception e) {

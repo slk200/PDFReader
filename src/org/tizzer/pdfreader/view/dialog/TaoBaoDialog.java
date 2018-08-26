@@ -8,17 +8,6 @@ import java.awt.*;
 public class TaoBaoDialog extends JDialog {
     private static TaoBaoDialog taoBaoDialog;
 
-    public static void newInstance() {
-        if (taoBaoDialog != null) {
-            if (!taoBaoDialog.isVisible()) {
-                taoBaoDialog.setVisible(true);
-            }
-        } else {
-            taoBaoDialog = new TaoBaoDialog();
-            taoBaoDialog.setVisible(true);
-        }
-    }
-
     private TaoBaoDialog() {
         JPanel panel = new JPanel() {
             @Override
@@ -29,10 +18,21 @@ public class TaoBaoDialog extends JDialog {
             }
         };
         this.add(panel);
-        this.setAlwaysOnTop(true);
-        this.setTitle("宝贝信息");
+        this.setTitle(SystemConstants.GOODS_INFO);
+        this.setResizable(false);
         this.setSize(SystemConstants._imgtaobao.getIconWidth(),
                 SystemConstants._imgtaobao.getIconHeight() + this.getInsets().top);
-        this.setLocationRelativeTo(getRootPane());
+        this.setLocationRelativeTo(null);
+    }
+
+    public static void newInstance() {
+        if (taoBaoDialog != null) {
+            if (!taoBaoDialog.isVisible()) {
+                taoBaoDialog.setVisible(true);
+            }
+        } else {
+            taoBaoDialog = new TaoBaoDialog();
+            taoBaoDialog.setVisible(true);
+        }
     }
 }
