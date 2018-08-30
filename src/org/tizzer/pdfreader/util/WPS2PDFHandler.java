@@ -75,43 +75,50 @@ public class WPS2PDFHandler {
             }
         } else {
             String filenameWithSuffix = parent.getName().toLowerCase();
-            int dotIndex = filenameWithSuffix.lastIndexOf(".");
-            String suffix = filenameWithSuffix.substring(dotIndex + 1);
-            if (!suffix.equalsIgnoreCase("pdf")) {
-                String filename = filenameWithSuffix.substring(0, dotIndex + 1);
-                String pdfFilePath = parent.getParent() + File.separator + filename + "pdf";
-                switch (suffix) {
-                    case "doc":
-                    case "docx":
-                    case "wps":
-                        WORD_NUM++;
-                        countListener.countWORD(WORD_NUM);
-                        office2pdf(pdfFilePath, parent, "word");
-                        break;
-                    case "ppt":
-                    case "pptx":
-                    case "dps":
-                    case "dpt":
-                    case "pot":
-                    case "pps":
-                        PPT_NUM++;
-                        countListener.countPPT(PPT_NUM);
-                        office2pdf(pdfFilePath, parent, "ppt");
-                        break;
-                    case "xls":
-                    case "xlsx":
-                        EXCEL_NUM++;
-                        countListener.countExcel(EXCEL_NUM);
-                        office2pdf(pdfFilePath, parent, "excel");
-                        break;
-                    default:
-                        processListener.hasUnsupportedFile(parent.getParent());
+            if (parent.isHidden() || !filenameWithSuffix.startsWith("~$")) {
+                int dotIndex = filenameWithSuffix.lastIndexOf(".");
+                String suffix = filenameWithSuffix.substring(dotIndex + 1);
+                if (!suffix.equals("pdf")) {
+                    String filename = filenameWithSuffix.substring(0, dotIndex + 1);
+                    String pdfFilePath = parent.getParent() + File.separator + filename + "pdf";
+                    switch (suffix) {
+                        case "doc":
+                        case "docx":
+                        case "wps":
+                        case "dot":
+                        case "wpt":
+                            WORD_NUM++;
+                            countListener.countWORD(WORD_NUM);
+                            office2pdf(pdfFilePath, parent, "word");
+                            break;
+                        case "ppt":
+                        case "pptx":
+                        case "dps":
+                        case "dpt":
+                        case "pot":
+                        case "pps":
+                            PPT_NUM++;
+                            countListener.countPPT(PPT_NUM);
+                            office2pdf(pdfFilePath, parent, "ppt");
+                            break;
+                        case "xls":
+                        case "xlsx":
+                        case "xlt":
+                        case "et":
+                        case "ett":
+                            EXCEL_NUM++;
+                            countListener.countExcel(EXCEL_NUM);
+                            office2pdf(pdfFilePath, parent, "excel");
+                            break;
+                        default:
+                            processListener.hasUnsupportedFile(parent.getParent());
+                    }
+                } else {
+                    PDF_NUM++;
+                    countListener.countPDF(PDF_NUM);
+                    logListener.log("无需转换" + "\n");
+                    count(parent);
                 }
-            } else {
-                PDF_NUM++;
-                countListener.countPDF(PDF_NUM);
-                logListener.log("无需转换" + "\n");
-                count(parent);
             }
         }
     }
