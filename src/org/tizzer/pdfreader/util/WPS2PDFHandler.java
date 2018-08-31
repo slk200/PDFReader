@@ -75,7 +75,7 @@ public class WPS2PDFHandler {
             }
         } else {
             String filenameWithSuffix = parent.getName().toLowerCase();
-            if (parent.isHidden() || !filenameWithSuffix.startsWith("~$")) {
+            if (!parent.isHidden() || !filenameWithSuffix.startsWith("~$")) {
                 int dotIndex = filenameWithSuffix.lastIndexOf(".");
                 String suffix = filenameWithSuffix.substring(dotIndex + 1);
                 if (!suffix.equals("pdf")) {
