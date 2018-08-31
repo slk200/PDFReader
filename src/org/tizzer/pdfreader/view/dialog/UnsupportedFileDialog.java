@@ -42,6 +42,7 @@ public class UnsupportedFileDialog extends JDialog {
         mEditorPane.addHyperlinkListener(event -> {
             if (event.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                 try {
+                    System.out.println(new File(event.getURL().getFile()));
                     Desktop.getDesktop().open(new File(event.getURL().getFile()));
                 } catch (IOException e) {
                     e.printStackTrace();
