@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<AnchorPane prefHeight="260.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea">
+    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="84.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@/image/javafx.png"/>
+    </ImageView>
+    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="67.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@/image/jcob.png"/>
+    </ImageView>
+    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="67.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@/image/pdfbox.png"/>
+    </ImageView>
+    <Text layoutX="146.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="JavaFX v2.2"/>
+    <Text layoutX="146.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jcob v1.19"/>
+    <Text layoutX="146.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PDFBox v2.0.11"/>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea"
+      fx:controller="org.tizzer.counttool.dialog.SettingController">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
+        <opaqueInsets>
+            <Insets/>
+        </opaqueInsets>
+        <Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="设置默认位置"
+              AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0"/>
+        <TextField fx:id="defaultPlace" disable="true" layoutX="10.0" layoutY="33.0" promptText="文件的接收位置"
+                   AnchorPane.leftAnchor="10.0"/>
+        <Button layoutX="179.0" layoutY="33.0" mnemonicParsing="false" onAction="#scanFile" prefHeight="23.0"
+                prefWidth="55.0" text="浏览"/>
+        <Text layoutX="10.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="附加项"
+              AnchorPane.leftAnchor="10.0"/>
+        <TableView fx:id="extraTable" editable="true" layoutX="10.0" layoutY="97.0" prefHeight="260.0"
+                   prefWidth="293.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" editable="false" prefWidth="75.0" sortable="false" text="选项"/>
+                <TableColumn fx:id="priceColumn" prefWidth="75.0" sortable="false" text="单价"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#deleteExtra" text="删除"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <TextField fx:id="nameField" layoutX="10.0" layoutY="361.0" promptText="名称" AnchorPane.bottomAnchor="10.0"
+                   AnchorPane.leftAnchor="10.0">
+            <tooltip>
+                <Tooltip text="建议长度10个字符，超出部分显示..."/>
+            </tooltip>
+        </TextField>
+        <Spinner fx:id="priceSpinner" editable="true" layoutX="179.0" layoutY="361.0" prefHeight="23.0" prefWidth="60.0"
+                 AnchorPane.bottomAnchor="10.0"/>
+        <Button layoutX="248.0" layoutY="361.0" mnemonicParsing="false" onAction="#addExtra" prefHeight="23.0"
+                prefWidth="55.0" text="添加" AnchorPane.bottomAnchor="10.0"/>
+    </AnchorPane>
+</HBox>
