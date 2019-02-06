@@ -1,0 +1,18 @@
+root {
+    display: block;
+}
+
+Hyperlink {
+    -fx-text-fill: black;
+    -fx-underline: false;
+}
+
+Hyperlink:hover {
+    -fx-text-fill: #0f9ee7;
+    -fx-underline: true;
+}
+
+Hyperlink:pressed {
+    -fx-text-fill: blue;
+    -fx-underline: true;
+}

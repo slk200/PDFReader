@@ -2,123 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ce41cf7-b484-426e-8cb3-d42c014f3f6c" name="Default" comment="update">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/extlib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jacob-1.19-x86.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reference.ai" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/done@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/excel@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/excel@64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/failed@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/javafx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/jcob.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/noneed@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/other@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/other@64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/paint1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/paint2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/pdf@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/pdf@64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/pdfbox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/pic@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/pic@64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/ppt@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/ppt@64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/ready@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/word@16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/image/word@64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snap/snap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/MainWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/action/DoubleEditorAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/action/IntegerEditorAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/bean/Define.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/bean/Extra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/bean/ExtraItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/bean/PendedFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/bean/SumRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/cell/DoubleTableCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/cell/FileTypeTableCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/cell/IntegerTableCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/cell/StateTableCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/cell/TextTableCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/constant/ChangeType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/constant/FileType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/constant/ImageSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/constant/Signal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/AboutDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/InfoDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/SettingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/SettingDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/about.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/setting.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/util/AsyncTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/util/DefineParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/util/FileCountHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/util/PDFCountHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/PDFReader_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/itext-2.1.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/image/itext@64px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/image/powerby.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/controller/AboutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/fxml/about.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFReader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PDFReader.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.prop" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/calc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/error_off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/excel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/folder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/locfile_off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/page.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/pdf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/ppt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/prop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/sale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/start.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/dark/word.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/error_on.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/calc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/error_off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/excel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/folder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/locfile_off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/page.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/pdf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/ppt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/prop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/sale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/start.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/light/word.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/locfile_on.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/taobao.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/darcula.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jacob-1.19-x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jacob-1.19-x64.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jacob.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jacob.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/pdfbox-app-2.0.11.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/RuntimeConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/entity/Prop.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayout.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstraints.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/PropParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/ThreadPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/util/Office2PDFHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/callback/CountListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/callback/LogListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/callback/ProcessListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Theme.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/TaoBaoDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/UnsupportedFileDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/ConsolePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/FilePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logo.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reference.ai" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/image/javafx.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/image/javafx@64px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/image/jcob.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/image/jcob@64px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/image/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/image/logo@256px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/image/pdfbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/BootApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/constant/ImageSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/constant/ImageSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/AboutDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/AboutDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/InfoDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/InfoDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/SettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/controller/SettingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/SettingDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/SettingDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/about.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/setting.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/fxml/setting.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/fxml/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/tizzer/counttool/util/PDFCountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/tizzer/counttool/util/PDFCountHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -134,7 +44,20 @@
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../PDFReader\exportToHTML" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/BootApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -149,9 +72,12 @@
       <find>System.out.println</find>
       <find>new Variant(false)</find>
       <find>new BorderLayout()</find>
+      <find>AboutDialog</find>
+      <find>InfoDialog</find>
     </findStrings>
     <replaceStrings>
       <replace>logcatListener.logcat</replace>
+      <replace>-fx-text-fill:</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -161,29 +87,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/FileUtil.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/SystemContrants.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/SystemConstans.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/AbstractLayoutManager.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/VerticalFlowLayout.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/Window.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/ToolKits.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/SystemConstants.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/VerticalFlowLayout.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/AbstractLayoutManager.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/LogcatListener.java" />
-        <option value="$USER_HOME$/Desktop/configuration.xml" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/locFilelistener.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/locFileListener.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/LocFileListener.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/ToolKits.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/ProcessListener.java" />
-        <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/callback/CountListener.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/LocFileDialog.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/UbsupportedFileDialog.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/parts/SystemMenuBar.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/view/UnsupportedFileDialog.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/Office2PDF.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/Office2PDFHandler.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDF.java" />
@@ -211,7 +118,26 @@
         <option value="$PROJECT_DIR$/src/counttool/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/org/tizzer/counttool/main.fxml" />
         <option value="$PROJECT_DIR$/src/org/tizzer/counttool/MainController.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/MainWindow.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/util/PDFCountHandler.java" />
+        <option value="$PROJECT_DIR$/res/css/custom.css" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/controller/AboutController.java" />
+        <option value="$PROJECT_DIR$/res/fxml/main.fxml" />
+        <option value="$PROJECT_DIR$/res/fxml/setting.fxml" />
+        <option value="$PROJECT_DIR$/res/fxml/about.fxml" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/fxml/about.fxml" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/BootApplication.java" />
+        <option value="$PROJECT_DIR$/src/test/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/AlertBox.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/InfoDialog.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/controller/SettingController.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/AboutDialog.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/dialog/SettingDialog.java" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/controller/MainController.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/fxml/main.fxml" />
+        <option value="$PROJECT_DIR$/src/org/tizzer/counttool/fxml/setting.fxml" />
       </list>
     </option>
   </component>
@@ -227,8 +153,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,25 +177,27 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533209993380" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/itext-pdfa-5.5.13.jar!/" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
     <property name="tags.panel.proportion" value="0.5" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEAProjects\PDFReader\src\org\tizzer\counttool" />
+      <recent name="D:\IDEAProjects\PDFReader\res\css" />
+      <recent name="D:\IDEAProjects\PDFReader\res\fxml" />
       <recent name="D:\IDEAProjects\PDFReader\snap" />
       <recent name="D:\IDEAProjects\PDFReader\image\white" />
-      <recent name="E:\IDEAProjects\PDFReader\libs" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProjects\PDFReader\res\image" />
+      <recent name="D:\IDEAProjects\PDFReader\lib" />
       <recent name="D:\IDEAProjects\PDFReader" />
       <recent name="D:\IDEAProjects\PDFReader\src" />
       <recent name="D:\IDEAProjects\PDFReader\image" />
-      <recent name="D:\IDEAProjects\PDFReader\libs" />
-      <recent name="D:\IDEAProjects\PDFReader\src\org\tizzer\pdfreader" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -348,13 +276,13 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.tizzer.counttool.MainWindow" />
+    <configuration name="BootApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.tizzer.counttool.BootApplication" />
       <module name="PDFReader" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.tizzer.counttool.*" />
+          <option name="PATTERN" value="org.tizzer.counttool.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -457,7 +385,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainWindow" />
+        <item itemvalue="Application.BootApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -503,24 +431,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19427083" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18137783" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32944915" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37394068" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37195122" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32971016" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3292683" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -546,241 +474,253 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/libs/darcula.jar!/com/bulenkov/iconloader/util/ArrayUtilRt.class">
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/cell/StateTableCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="196">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/cell/TextTableCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/darcula.jar!/com/bulenkov/iconloader/util/AsyncByteArrayOutputStream.class">
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/constant/ChangeType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="196">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/darcula.jar!/com/bulenkov/iconloader/util/Base64Converter.class">
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/constant/FileType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="140">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/darcula.jar!/com/bulenkov/iconloader/util/BufferExposingByteArrayOutputStream.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/darcula.jar!/com/bulenkov/iconloader/util/JBUI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2292">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/darcula.jar!/com/bulenkov/darcula/darcula_windows.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-260" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/LookAndFeelTest-latest-SNAPSHOT-all.jar!/ch/qos/logback/classic/db/DBHelper.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/javax/swing/JDesktopPane.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5b7ac26dc89f9e/darcula_windows.properties" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5b7ac410cf03aa/darcula.properties" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/layout/TableLayoutConstraints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2976">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/prism/paint/Color.java" />
-    <entry file="file://$PROJECT_DIR$/libs/darcula.properties" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/javax/swing/UIManager.java" />
-    <entry file="jar://$PROJECT_DIR$/libs/darcula.jar!/com/bulenkov/darcula/DarculaLaf.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-516">
-          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/com/sun/java/swing/plaf/windows/WindowsFileChooserUI.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/event/KeyEvent.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/ThreadPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/WPS2PDFCore.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/callback/ChangeThemeListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/entity/Prop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/File.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/util/PropParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/javax/swing/border/TitledBorder.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/SystemConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1896">
-          <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Cursor.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/SettingDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2136">
-          <caret line="89" column="31" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
-          <folding>
-            <element signature="imports" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/TaoBaoDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/dialog/UnsupportedFileDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1128">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.prop">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/constants/RuntimeConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/ConsolePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="87" column="54" lean-forward="true" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/panel/FilePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="159" column="29" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/BootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Theme.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/pdfreader/view/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="154" column="19" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/cell/DoubleTableCell.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/constant/Signal.java">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/action/IntegerEditorAction.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/AsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/PDFCountHandler.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/cell/FileTypeTableCell.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/DefineParser.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/FileCountHandler.java">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/constant/ImageSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/MainWindow.java">
+    <entry file="file://$PROJECT_DIR$/logo.psd" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/cos/COSDocument.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/cos/COSBase.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/pdmodel/common/COSObjectable.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/pdmodel/PDDocumentInformation.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/pdmodel/PDDocumentCatalog.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/pdmodel/encryption/PDEncryption.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/io/RandomAccessBufferedFileInputStream.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/io/RandomAccessRead.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/io/ScratchFile.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/pdfparser/PDFParser.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/pdfparser/COSParser.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.11.jar!/org/apache/pdfbox/pdmodel/PDDocument.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/itext-1.3.1.jar!/com/lowagie/text/pdf/PdfReader.class" />
+    <entry file="file://$PROJECT_DIR$/res/image/logo@256px.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/image/pdfbox.png" />
+    <entry file="file://$PROJECT_DIR$/res/image/javafx@64px.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/image/jcob@64px.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/DefineParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/itext-2.1.7.jar!/com/lowagie/text/pdf/PdfReader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="2861" column="22" selection-start-line="2861" selection-start-column="22" selection-end-line="2861" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/PDFCountHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/Office2PDFHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/util/FileCountHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/main.fxml">
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/stage/Stage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="522" column="22" selection-start-line="522" selection-start-column="22" selection-end-line="522" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/beans/value/ObservableObjectValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/scene/control/Dialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="562" column="28" selection-start-line="562" selection-start-column="28" selection-end-line="562" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/AlertBox.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/dialog/InfoDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/controller/AboutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/controller/SettingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="101" column="16" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/dialog/SettingDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/dialog/AboutDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/fxml/main.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="39" column="77" lean-forward="true" selection-start-line="39" selection-start-column="77" selection-end-line="39" selection-end-column="77" />
+        <state relative-caret-position="1440">
+          <caret line="193" column="16" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/fxml/about.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="441" column="12" selection-start-line="441" selection-start-column="12" selection-end-line="441" selection-end-column="32" />
+        <state relative-caret-position="896">
+          <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snap/snap.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="168">
-            <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <first_editor relative-caret-position="308">
+            <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDFReader.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/fxml/setting.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5376">
+          <caret line="227" column="73" selection-start-line="227" selection-start-column="73" selection-end-line="227" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tizzer/counttool/BootApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -814,6 +754,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>datafx-8.0.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

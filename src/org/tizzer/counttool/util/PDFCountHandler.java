@@ -1,6 +1,6 @@
 package org.tizzer.counttool.util;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
+import com.lowagie.text.pdf.PdfReader;
 import org.tizzer.counttool.constant.FileType;
 
 import java.io.File;
@@ -28,20 +28,16 @@ public class PDFCountHandler {
      * @param file
      */
     public void count(File file) {
-        PDDocument pdfReader = null;
+        PdfReader pdfReader = null;
         try {
-            pdfReader = PDDocument.load(file);
+            pdfReader = new PdfReader(file.getAbsolutePath());
             page = pdfReader.getNumberOfPages();
             totalPage += page;
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (pdfReader != null) {
-                    pdfReader.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (pdfReader != null) {
+                pdfReader.close();
             }
         }
     }

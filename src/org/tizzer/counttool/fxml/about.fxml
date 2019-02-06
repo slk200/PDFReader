@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="260.0" prefWidth="300.0"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.tizzer.counttool.controller.AboutController">
+    <ImageView fitHeight="52.0" fitWidth="240.0" layoutX="30.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true"
+               AnchorPane.topAnchor="10.0">
+        <Image url="@/image/powerby.png"/>
+    </ImageView>
+    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="76.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true"
+               AnchorPane.rightAnchor="171.87628936767578">
+        <Image url="@/image/javafx@64px.png"/>
+    </ImageView>
+    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="77.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true"
+               AnchorPane.rightAnchor="170.87628936767578">
+        <Image url="@/image/jcob@64px.png"/>
+    </ImageView>
+    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="77.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true"
+               AnchorPane.rightAnchor="170.87628936767578">
+        <Image url="@/image/itext@64px.png"/>
+    </ImageView>
+    <Hyperlink focusTraversable="false" layoutX="150.0" layoutY="123.0" onAction="#visitJavaFX" text="JavaFX v2.2"
+               AnchorPane.leftAnchor="150.0"/>
+    <Hyperlink focusTraversable="false" layoutX="150.0" layoutY="202.0" onAction="#visitJcob" text="Jcob v1.19"
+               AnchorPane.leftAnchor="150.0"/>
+    <Hyperlink focusTraversable="false" layoutX="150.0" layoutY="275.0" onAction="#visitiText" text="iText v2.1.7"
+               AnchorPane.leftAnchor="150.0"/>
+
+    <stylesheets>
+        <URL value="@/org/tizzer/counttool/css/custom.css"/>
+    </stylesheets>
+</AnchorPane>

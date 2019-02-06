@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * Created by tizzer on 2019/1/21.
  */
 public interface ImageSource {
-    Image LOGO = new Image(ImageSource.class.getResourceAsStream("/image/logo.png"));
+    Image LOGO = new Image(ImageSource.class.getResourceAsStream("/image/logo@256px.png"));
 
     Image NOTRADE = new Image(ImageSource.class.getResourceAsStream("/image/paint2.png"));
     Image NOEXTRA = new Image(ImageSource.class.getResourceAsStream("/image/paint1.png"));
