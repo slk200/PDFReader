@@ -8,7 +8,7 @@
             xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.tizzer.counttool.controller.AboutController">
     <ImageView fitHeight="52.0" fitWidth="240.0" layoutX="30.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true"
                AnchorPane.topAnchor="10.0">
-        <Image url="@/image/powerby.png"/>
+        <Image url="@/image/powerby@240px.png"/>
     </ImageView>
     <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="76.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true"
                AnchorPane.rightAnchor="171.87628936767578">

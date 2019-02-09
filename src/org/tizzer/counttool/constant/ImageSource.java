@@ -22,4 +22,7 @@ public interface ImageSource {
     Image PDF = new Image(ImageSource.class.getResourceAsStream("/image/pdf@16px.png"));
     Image PIC = new Image(ImageSource.class.getResourceAsStream("/image/pic@16px.png"));
     Image OTHER = new Image(ImageSource.class.getResourceAsStream("/image/other@16px.png"));
+
+    Image PAUSE = new Image(ImageSource.class.getResourceAsStream("/image/pause@16px.png"));
+    Image PLAY = new Image(ImageSource.class.getResourceAsStream("/image/play@16px.png"));
 }

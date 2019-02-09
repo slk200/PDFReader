@@ -30,7 +30,7 @@ public class BootApplication extends Application {
 
         primaryStage.getIcons().add(ImageSource.LOGO);
         primaryStage.setTitle("价格统计工具");
-        primaryStage.setScene(new Scene(root, 1280, 800));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
         primaryStage.setMinWidth(primaryStage.getWidth());
         primaryStage.setMinHeight(primaryStage.getHeight());

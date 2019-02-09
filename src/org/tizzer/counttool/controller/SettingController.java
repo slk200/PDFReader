@@ -23,7 +23,7 @@ public class SettingController {
     @FXML
     private TextField defaultPlace;
     @FXML
-    private Text toolTip;
+    private Text errorTip;
     @FXML
     private TableView<Extra> extraTable;
     @FXML
@@ -47,8 +47,8 @@ public class SettingController {
         this.define = define;
     }
 
-    public void setStage(Stage window) {
-        this.stage = window;
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
     public void initControl() {
@@ -68,12 +68,12 @@ public class SettingController {
         priceSpinner.getEditor().setOnAction(new DoubleEditorAction(priceSpinner.getEditor()));
 
         //default folder
-        if (define.getDefaultDirectory() == null) {
-            toolTip.setText("设置默认位置是指设置你选择执行文件夹的起始位置");
-        } else if (define.getDefaultDirectory().exists()) {
-            defaultPlace.setText(define.getDefaultDirectory().getAbsolutePath());
-        } else {
-            toolTip.setText("之前设置的地址当前已不存在！");
+        if (define.getDefaultDirectory() != null) {
+            if (define.getDefaultDirectory().exists()) {
+                defaultPlace.setText(define.getDefaultDirectory().getAbsolutePath());
+            } else {
+                errorTip.setText("之前设置的地址当前已不存在！");
+            }
         }
         //table items
         extraTable.getItems().addAll(define.getExtras());
@@ -89,7 +89,7 @@ public class SettingController {
         if (directory != null) {
             define.setDefaultDirectory(directory);
             defaultPlace.setText(directory.getAbsolutePath());
-            toolTip.setText(null);
+            errorTip.setText(null);
         }
     }
 
@@ -100,6 +100,7 @@ public class SettingController {
         String name = nameField.getText().trim();
         if (name.isEmpty()) {
             new InfoDialog("选项名不能为空！", stage);
+            return;
         }
         String price = priceSpinner.getEditor().getText().trim();
         Extra extra = new Extra(name, price);
@@ -107,6 +108,9 @@ public class SettingController {
         extraTable.getItems().add(extra);
     }
 
+    /**
+     * 删除附项
+     */
     public void deleteExtra() {
         int selectedIndex = extraTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex != -1) {

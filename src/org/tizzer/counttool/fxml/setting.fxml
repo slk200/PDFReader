@@ -2,13 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
-<HBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+<?import java.net.URL?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171"
       fx:controller="org.tizzer.counttool.controller.SettingController">
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="600.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="313.0">
         <opaqueInsets>
             <Insets/>
         </opaqueInsets>
@@ -18,7 +17,7 @@
                    AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="33.0"/>
         <Button layoutX="179.0" layoutY="33.0" mnemonicParsing="false" onAction="#scanFile" prefHeight="23.0"
                 prefWidth="55.0" text="浏览" AnchorPane.topAnchor="33.0"/>
-        <Text fx:id="toolTip" fill="RED" layoutX="10.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0"
+        <Text fx:id="errorTip" fill="RED" layoutX="10.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0"
               AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="63.8125"/>
         <Text layoutX="10.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="附加项"
               AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="85.8125"/>
@@ -49,20 +48,8 @@
                  AnchorPane.bottomAnchor="10.0"/>
         <Button layoutX="248.0" layoutY="377.0" mnemonicParsing="false" onAction="#addExtra" prefHeight="23.0"
                 prefWidth="55.0" text="添加" AnchorPane.bottomAnchor="10.0"/>
-        <Accordion layoutX="315.0" layoutY="10.0" prefHeight="390.0" prefWidth="279.0" AnchorPane.bottomAnchor="10.0"
-                   AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-            <panes>
-                <TitledPane text="默认位置说明">
-                    <StackPane prefHeight="17.0" prefWidth="200.0">
-                        <ImageView pickOnBounds="true" preserveRatio="true">
-                            <Image url="@/image/test.gif"/>
-                        </ImageView>
-                    </StackPane>
-                </TitledPane>
-                <TitledPane text="附加项说明">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0"/>
-                </TitledPane>
-            </panes>
-        </Accordion>
     </AnchorPane>
+    <stylesheets>
+        <URL value="@/org/tizzer/counttool/css/custom.css"/>
+    </stylesheets>
 </HBox>
