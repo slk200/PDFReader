@@ -1,5 +1,8 @@
 # PDFReader
 
+##### 软件截图
+![Alt text](https://github.com/slk200/PDFReader/blob/master/snap/snap.png "软件截图")
+
 ### 第三版
 * 修复了添加附项未选择时点击添加出现的异常
 * 修复了在未选中文件时打开pdf文件的异常
