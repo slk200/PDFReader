@@ -240,6 +240,33 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
       <option name="BCName" value="" />
       <option name="IOSSimulatorSdkPath" value="" />
@@ -323,33 +350,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -358,41 +358,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
@@ -412,7 +385,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BootApplication" />
+        <item itemvalue="应用程序.BootApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -555,21 +528,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/stage/Stage.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/stage/Stage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144">
           <caret line="522" column="22" selection-start-line="522" selection-start-column="22" selection-end-line="522" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/beans/value/ObservableObjectValue.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/beans/value/ObservableObjectValue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/scene/control/Dialog.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/scene/control/Dialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="562" column="28" selection-start-line="562" selection-start-column="28" selection-end-line="562" selection-end-column="28" />
@@ -634,28 +607,28 @@
     <entry file="file://$PROJECT_DIR$/res/image/play@16px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/scene/AccessibleRole.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/scene/AccessibleRole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2839">
           <caret line="452" column="4" selection-start-line="452" selection-start-column="4" selection-end-line="452" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/beans/value/WritableObjectValue.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/beans/value/WritableObjectValue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="706">
           <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/scene/control/Slider.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/scene/control/Slider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="215" column="24" selection-start-line="215" selection-start-column="24" selection-end-line="215" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/util/Duration.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/util/Duration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="284" column="20" selection-start-line="284" selection-start-column="20" selection-end-line="284" selection-end-column="20" />
@@ -683,14 +656,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/scene/Node.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="7184" column="22" selection-start-line="7184" selection-start-column="22" selection-end-line="7184" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/javafx-src.zip!/javafx/scene/media/MediaPlayer.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/javafx-src.zip!/javafx/scene/media/MediaPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="1083" column="22" selection-start-line="1083" selection-start-column="22" selection-end-line="1083" selection-end-column="22" />
@@ -774,21 +747,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/src.zip!/java/util/zip/ZipCoder.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/src.zip!/java/util/zip/ZipCoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/src.zip!/java/util/zip/ZipConstants.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/src.zip!/java/util/zip/ZipConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Application/Java/jdk/src.zip!/java/util/zip/CRC32.java">
+    <entry file="jar://$PROJECT_DIR$/../../../Application/Java/jdk/src.zip!/java/util/zip/CRC32.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />

@@ -23,13 +23,16 @@ import org.tizzer.counttool.constant.ChangeType;
 import org.tizzer.counttool.constant.FileType;
 import org.tizzer.counttool.constant.ImageSource;
 import org.tizzer.counttool.constant.Signal;
+import org.tizzer.counttool.constant.ThemeMode;
 import org.tizzer.counttool.dialog.AboutDialog;
 import org.tizzer.counttool.dialog.InfoDialog;
 import org.tizzer.counttool.dialog.SettingDialog;
+import org.tizzer.counttool.dialog.ThemeDialog;
 import org.tizzer.counttool.util.AsyncTask;
 import org.tizzer.counttool.util.DefineParser;
 import org.tizzer.counttool.util.FileCountHandler;
 import org.tizzer.counttool.util.PDFCountHandler;
+import org.tizzer.counttool.util.ThemeManager;
 
 import java.awt.*;
 import java.io.File;
@@ -56,7 +59,7 @@ public class MainController {
     @FXML
     private Label otherNum;
     @FXML
-    private Text totalPrice;
+    private Label totalPrice;
     @FXML
     private Spinner<Integer> pageSpinner;
     @FXML
@@ -78,7 +81,7 @@ public class MainController {
     @FXML
     private TableColumn<ExtraItem, Integer> numColumn;
     @FXML
-    private Text totalPage;
+    private Label totalPage;
     @FXML
     private ProgressIndicator totalProgress;
     @FXML
@@ -103,7 +106,7 @@ public class MainController {
     //待解析文件夹
     private File selectedDirectory;
     //服务
-    private ExecutorService service = Executors.newSingleThreadExecutor();
+    private final ExecutorService service = Executors.newSingleThreadExecutor();
     //线程是否空闲
     private boolean isFree = true;
     //文件统计处理机
@@ -143,7 +146,7 @@ public class MainController {
      */
     public void initControl() {
         //placeholder
-        sumList.setPlaceholder(new Text("累计历史记录"));
+        sumList.setPlaceholder(new Label("累计历史记录"));
         ImageView extraPlaceholder = new ImageView(ImageSource.NOEXTRA);
         extraTable.setPlaceholder(extraPlaceholder);
         ImageView pendedFilePlaceholder = new ImageView(ImageSource.NOTRADE);
@@ -155,8 +158,8 @@ public class MainController {
                 0.01, 0.01));
         numSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, Integer.MAX_VALUE,
                 1, 1));
-        specSpinner.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.01, Double.MAX_VALUE,
-                0.01, 0.01));
+        specSpinner.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, Double.MAX_VALUE,
+                0, 0.01));
         //editorAction
         pageSpinner.getEditor().setOnAction(new IntegerEditorAction(pageSpinner.getEditor()));
         priceSpinner.getEditor().setOnAction(new DoubleEditorAction(priceSpinner.getEditor()));
@@ -171,7 +174,7 @@ public class MainController {
         numColumn.setCellFactory(param -> new IntegerTableCell<>());
         numColumn.setOnEditCommit(event -> {
             int gap = event.getNewValue() - event.getOldValue();
-            Double price = Double.valueOf(event.getRowValue().getPrice());
+            double price = Double.parseDouble(event.getRowValue().getPrice());
             sum += gap * price;
             totalPrice.setText(String.format("总价：%.2f", this.sum));
             event.getRowValue().setNum(event.getNewValue());
@@ -237,7 +240,7 @@ public class MainController {
                 DefineParser.saveSetting(define);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -365,13 +368,21 @@ public class MainController {
     }
 
     /**
+     * 主题设置
+     */
+    public void changeTheme() {
+        ThemeDialog themeDialog = new ThemeDialog(stage);
+        themeDialog.showAndWait().ifPresent(ThemeManager::setMode);
+    }
+
+    /**
      * 关于
      */
     public void about() {
         try {
             new AboutDialog(stage);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -416,7 +427,7 @@ public class MainController {
                 Desktop.getDesktop().open(new File(pendedFile.getPath()));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -435,13 +446,15 @@ public class MainController {
                         String filePath = pendedFile.getPath();
                         int lastIndexOf = filePath.lastIndexOf('.');
                         File PDFFile = new File(filePath.substring(0, lastIndexOf) + ".pdf");
-                        Desktop.getDesktop().open(PDFFile);
+                        if (PDFFile.exists()) {
+                            Desktop.getDesktop().open(PDFFile);
+                        }
                         break;
                     default:
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -456,7 +469,7 @@ public class MainController {
                 Desktop.getDesktop().open(new File(file.getParent()));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
