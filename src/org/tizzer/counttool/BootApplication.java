@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import org.tizzer.counttool.constant.ImageSource;
 import org.tizzer.counttool.controller.MainController;
 import org.tizzer.counttool.util.DefineParser;
+import org.tizzer.counttool.util.ThemeManager;
 
 /**
  * Created by tizzer on 2019/1/19.
@@ -30,9 +31,11 @@ public class BootApplication extends Application {
 
         primaryStage.getIcons().add(ImageSource.LOGO);
         primaryStage.setTitle("价格统计工具");
-        primaryStage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
         primaryStage.show();
-        primaryStage.setMinWidth(primaryStage.getWidth());
-        primaryStage.setMinHeight(primaryStage.getHeight());
+        ThemeManager.init(scene);
+        primaryStage.setMinWidth(960);
+        primaryStage.setMinHeight(720);
     }
 }

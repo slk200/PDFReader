@@ -9,6 +9,7 @@ import javafx.stage.Window;
 import org.tizzer.counttool.bean.Define;
 import org.tizzer.counttool.constant.ImageSource;
 import org.tizzer.counttool.controller.SettingController;
+import org.tizzer.counttool.util.ThemeManager;
 
 /**
  * Created by tizzer on 2019/1/21.
@@ -28,6 +29,8 @@ public class SettingDialog extends Dialog<Define> {
         settingController.setStage(stage);
 
         this.setTitle("设置");
+        this.getDialogPane().getStylesheets().add(getClass().getResource("/org/tizzer/counttool/css/custom.css").toExternalForm());
+        ThemeManager.decorate(this.getDialogPane());
         this.getDialogPane().setContent(content);
         this.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         this.setResultConverter(param -> {

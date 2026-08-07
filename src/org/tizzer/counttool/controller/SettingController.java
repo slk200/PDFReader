@@ -23,7 +23,7 @@ public class SettingController {
     @FXML
     private TextField defaultPlace;
     @FXML
-    private Text errorTip;
+    private Label errorTip;
     @FXML
     private TableView<Extra> extraTable;
     @FXML
