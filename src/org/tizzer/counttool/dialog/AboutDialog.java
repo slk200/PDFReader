@@ -1,7 +1,6 @@
 package org.tizzer.counttool.dialog;
 
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
@@ -28,7 +27,6 @@ public class AboutDialog extends Dialog {
         dialogPane.getStyleClass().add("dialog-pane");
         ThemeManager.decorate(dialogPane);
         dialogPane.setContent(content);
-//        dialogPane.setPadding(new Insets(0, 0, 100, 0));
         dialogPane.getButtonTypes().add(new ButtonType("关闭", ButtonBar.ButtonData.CANCEL_CLOSE));
         this.setTitle("关于");
         this.initOwner(owner);

@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
  */
 public class IntegerEditorAction implements EventHandler<ActionEvent> {
 
-    private TextField editor;
+    private final TextField editor;
 
     public IntegerEditorAction(TextField editor) {
         this.editor = editor;

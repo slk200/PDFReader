@@ -3,6 +3,8 @@ package org.tizzer.counttool.util;
 import org.tizzer.counttool.bean.Define;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * Created by tizzer on 2019/1/25.
@@ -21,7 +23,7 @@ public class DefineParser {
             if (!file.exists()) {
                 saveSetting(new Define());
             }
-            objectInputStream = new ObjectInputStream(new FileInputStream(file));
+            objectInputStream = new ObjectInputStream(Files.newInputStream(file.toPath()));
             define = (Define) objectInputStream.readObject();
             System.out.println(define);
         } catch (IOException | ClassNotFoundException e) {
@@ -32,7 +34,7 @@ public class DefineParser {
                     objectInputStream.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
         return define;
@@ -46,19 +48,19 @@ public class DefineParser {
     public static void saveSetting(Define define) {
         ObjectOutputStream objectOutputStream = null;
         try {
-            objectOutputStream = new ObjectOutputStream(new FileOutputStream("setting.dat"));
+            objectOutputStream = new ObjectOutputStream(Files.newOutputStream(Paths.get("setting.dat")));
             objectOutputStream.writeObject(define);
             objectOutputStream.flush();
             System.out.println(define);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         } finally {
             try {
                 if (objectOutputStream != null) {
                     objectOutputStream.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
     }

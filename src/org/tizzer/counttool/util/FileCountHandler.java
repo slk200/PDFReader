@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by tizzer on 2019/1/21.
  */
-public class FileCountHandler {
+public class  FileCountHandler {
     //counter
     private int wordNum;
     private int excelNum;
@@ -79,7 +79,7 @@ public class FileCountHandler {
                 switch (suffix) {
                     case "pdf":
                         pdfNum++;
-                        pendedFiles.add(new PendedFile(filenameWithSuffix, Signal.ONLYCOUNT,
+                        pendedFiles.add(new PendedFile(filenameWithSuffix, Signal.ONLY_COUNT,
                                 "等待计数", parent.getAbsolutePath(), FileType.PDF));
                         break;
                     case "doc":

@@ -10,7 +10,7 @@ import javafx.scene.control.Tooltip;
  */
 public class TextTableCell<S> extends TableCell<S, String> {
 
-    private Pos pos;
+    private final Pos pos;
 
     public TextTableCell() {
         this(Pos.CENTER_LEFT);

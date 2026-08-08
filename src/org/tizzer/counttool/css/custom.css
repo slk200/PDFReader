@@ -731,3 +731,268 @@
 .dark .hyperlink:visited {
     -fx-text-fill: #6f9dff;
 }
+
+/* ============================================================
+   悬浮转换按钮
+   ============================================================ */
+.float-button {
+    -fx-background-color: rgba(255, 255, 255, 0.78);
+    -fx-background-radius: 28;
+    -fx-background-insets: 0;
+    -fx-border-color: rgba(255, 255, 255, 0.95);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 28;
+    -fx-effect: dropshadow(gaussian, rgba(20, 80, 220, 0.35), 14, 0.3, 0, 4);
+}
+
+.float-button:hover, .float-hover {
+    -fx-background-color: rgba(230, 243, 255, 0.95);
+    -fx-border-color: rgba(64, 176, 255, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(20, 110, 255, 0.5), 18, 0.4, 0, 5);
+}
+
+/* 流光圆环：渐变边框旋转形成流光 */
+.float-ring {
+    -fx-background-color: transparent;
+    -fx-border-width: 5;
+    -fx-border-radius: 36;
+    -fx-border-color: linear-gradient(to top, #0d6efd, #40b0ff, transparent, transparent, #0d6efd);
+    -fx-effect: dropshadow(gaussian, rgba(20, 110, 255, 0.55), 10, 0.5, 0, 0);
+}
+
+/* 吐司气泡 */
+.float-toast {
+    -fx-background-color: rgba(40, 46, 60, 0.88);
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-padding: 10 14 10 14;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.3, 0, 3);
+}
+
+/* 深色模式下的悬浮按钮 */
+.dark .float-button {
+    -fx-background-color: rgba(30, 40, 62, 0.82);
+    -fx-border-color: rgba(120, 170, 255, 0.35);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 14, 0.35, 0, 4);
+}
+
+.dark .float-button:hover, .dark .float-hover {
+    -fx-background-color: rgba(42, 56, 86, 0.95);
+    -fx-border-color: rgba(80, 170, 255, 0.9);
+}
+
+/* ---------- 日期选择控件（液态玻璃） ---------- */
+.date-picker {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.40));
+    -fx-background-radius: 12;
+    -fx-background-insets: 0;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(96, 118, 170, 0.25), 8, 0.12, 0, 3);
+}
+
+.date-picker:focused, .date-picker:showing {
+    -fx-border-color: rgba(120, 160, 255, 0.85);
+    -fx-effect: dropshadow(gaussian, rgba(120, 160, 255, 0.4), 10, 0.25, 0, 0);
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #22305a;
+    -fx-prompt-text-fill: rgba(70, 85, 125, 0.55);
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-radius: 10;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+}
+
+.date-picker .arrow {
+    -fx-background-color: #4a5d92;
+}
+
+/* 弹出日历：统一深色圆角液态玻璃，浅色深色主题下都清晰可读 */
+.date-picker-popup {
+    -fx-background-color: rgba(26, 33, 50, 0.96);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 24, 0.35, 0, 8);
+}
+
+.date-picker-popup > * {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: linear-gradient(to bottom, rgba(72, 90, 130, 0.60), rgba(52, 66, 98, 0.45));
+    -fx-background-radius: 14 14 0 0;
+}
+
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #eef3ff;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup .spinner .button {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-radius: 10;
+    -fx-effect: null;
+}
+
+.date-picker-popup .spinner .button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+}
+
+.date-picker-popup .left-arrow, .date-picker-popup .right-arrow {
+    -fx-background-color: #cfe0ff;
+    -fx-shape: "M4,0 L8,4 L4,8 L0,4 Z";
+}
+
+.date-picker-popup .calendar-grid {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+}
+
+.date-picker-popup .cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.date-picker-popup .day-name-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #9fb4e8;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup .week-number-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7d90c4;
+}
+
+.date-picker-popup .date-cell, .date-picker-popup .day-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #f2f6ff;
+    -fx-background-radius: 8;
+}
+
+.date-picker-popup .date-cell:hover, .date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(110, 150, 255, 0.30);
+}
+
+.date-picker-popup .date-cell.selected, .date-picker-popup .day-cell.selected {
+    -fx-background-color: linear-gradient(to bottom, #6f9dff, #3f7bff);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(80, 140, 255, 0.6), 8, 0.4, 0, 2);
+}
+
+.date-picker-popup .date-cell.today, .date-picker-popup .day-cell.today {
+    -fx-border-color: #6f9dff;
+    -fx-border-radius: 8;
+}
+
+.date-picker-popup .date-cell:filled:hover, .date-picker-popup .day-cell:filled:hover {
+    -fx-background-color: rgba(110, 150, 255, 0.4);
+}
+
+/* 深色主题下控件本体改为深色玻璃 */
+.dark .date-picker {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+    -fx-border-color: rgba(255, 255, 255, 0.22);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 8, 0.2, 0, 3);
+}
+
+.dark .date-picker:focused, .dark .date-picker:showing {
+    -fx-border-color: rgba(110, 160, 255, 0.8);
+    -fx-effect: dropshadow(gaussian, rgba(110, 160, 255, 0.45), 10, 0.3, 0, 0);
+}
+
+.dark .date-picker .text-field {
+    -fx-text-fill: #e8edf9;
+    -fx-prompt-text-fill: rgba(174, 185, 214, 0.6);
+}
+
+.dark .date-picker .arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .date-picker .arrow-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.22);
+}
+
+.dark .date-picker .arrow {
+    -fx-background-color: #aeb9d6;
+}
+
+/* 高特异性覆盖：确保日期数字与表头在深色弹窗中清晰可读 */
+.date-picker-popup > .calendar-grid > .day-name-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #9fb4e8;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup > .calendar-grid > .week-number-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #7d90c4;
+}
+
+.date-picker-popup > .calendar-grid > .date-cell,
+.date-picker-popup > .calendar-grid > .day-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #f2f6ff;
+    -fx-background-radius: 8;
+}
+
+.date-picker-popup > .calendar-grid > .date-cell:hover,
+.date-picker-popup > .calendar-grid > .day-cell:hover {
+    -fx-background-color: rgba(110, 150, 255, 0.30);
+}
+
+.date-picker-popup > .calendar-grid > .date-cell.selected,
+.date-picker-popup > .calendar-grid > .day-cell.selected {
+    -fx-background-color: linear-gradient(to bottom, #6f9dff, #3f7bff);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(80, 140, 255, 0.6), 8, 0.4, 0, 2);
+}
+
+.date-picker-popup > .calendar-grid > .date-cell.today,
+.date-picker-popup > .calendar-grid > .day-cell.today {
+    -fx-border-color: #6f9dff;
+    -fx-border-radius: 8;
+}
+
+/* 弹窗内文本颜色：日期数字是 Text 节点，需用 -fx-fill 控制 */
+.date-picker-popup .text {
+    -fx-fill: #f2f6ff;
+}
+
+.date-picker-popup .day-name-cell .text {
+    -fx-fill: #9fb4e8;
+}
+
+.date-picker-popup .week-number-cell .text {
+    -fx-fill: #7d90c4;
+}
+
+.date-picker-popup .month-year-pane .text {
+    -fx-fill: #eef3ff;
+}
+
+.date-picker-popup .day-cell.selected .text,
+.date-picker-popup .date-cell.selected .text {
+    -fx-fill: #ffffff;
+}

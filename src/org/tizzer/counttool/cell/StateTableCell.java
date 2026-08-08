@@ -19,24 +19,24 @@ public class StateTableCell<S> extends TableCell<S, Signal> {
             setAlignment(Pos.CENTER);
             switch (item) {
                 case READY:
-                    setGraphic(new ImageView(ImageSource.READY));
+                    setGraphic(new ImageView(ImageSource.STATE_READY));
                     setText("等待转换");
                     break;
                 case NO_NEED:
-                case ONLYCOUNT:
-                    setGraphic(new ImageView(ImageSource.NONEED));
+                case ONLY_COUNT:
+                    setGraphic(new ImageView(ImageSource.STATE_NO_NEED));
                     setText("无需转换");
                     break;
-                case PENDINGANDCOUNT:
+                case PENDING_AND_COUNT:
                     setGraphic(new ProgressBar());
                     setText("正在转换");
                     break;
                 case DONE:
-                    setGraphic(new ImageView(ImageSource.DONE));
+                    setGraphic(new ImageView(ImageSource.STATE_DONE));
                     setText("转换完成");
                     break;
                 case FAILED:
-                    setGraphic(new ImageView(ImageSource.FAILED));
+                    setGraphic(new ImageView(ImageSource.STATE_FAILED));
                     setText("转换失败");
                     break;
                 default:

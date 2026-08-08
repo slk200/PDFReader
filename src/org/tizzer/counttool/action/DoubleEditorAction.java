@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
  */
 public class DoubleEditorAction implements EventHandler<ActionEvent> {
 
-    private TextField editor;
+    private final TextField editor;
 
     public DoubleEditorAction(TextField editor) {
         this.editor = editor;

@@ -18,22 +18,22 @@ public class FileTypeTableCell<S> extends TableCell<S, FileType> {
             setAlignment(Pos.CENTER);
             switch (item) {
                 case PDF:
-                    setGraphic(new ImageView(ImageSource.PDF));
+                    setGraphic(new ImageView(ImageSource.OFFICE_PDF));
                     break;
                 case WORD:
-                    setGraphic(new ImageView(ImageSource.WORD));
+                    setGraphic(new ImageView(ImageSource.OFFICE_DOC));
                     break;
                 case PIC:
-                    setGraphic(new ImageView(ImageSource.PIC));
+                    setGraphic(new ImageView(ImageSource.OFFICE_PIC));
                     break;
                 case EXCEL:
-                    setGraphic(new ImageView(ImageSource.EXCEL));
+                    setGraphic(new ImageView(ImageSource.OFFICE_ELS));
                     break;
                 case PPT:
-                    setGraphic(new ImageView(ImageSource.PPT));
+                    setGraphic(new ImageView(ImageSource.OFFICE_PPT));
                     break;
                 case OTHER:
-                    setGraphic(new ImageView(ImageSource.OTHER));
+                    setGraphic(new ImageView(ImageSource.OFFICE_OTHER));
                     break;
                 default:
             }

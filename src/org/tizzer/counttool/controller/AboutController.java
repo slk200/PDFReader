@@ -24,7 +24,7 @@ public class AboutController {
         try {
             Desktop.getDesktop().browse(URI.create(url));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

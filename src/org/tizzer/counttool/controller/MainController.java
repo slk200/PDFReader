@@ -9,10 +9,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import org.tizzer.counttool.action.DoubleEditorAction;
+import org.tizzer.counttool.component.FloatingConvertButton;
 import org.tizzer.counttool.action.IntegerEditorAction;
 import org.tizzer.counttool.bean.*;
 import org.tizzer.counttool.cell.FileTypeTableCell;
@@ -23,20 +23,26 @@ import org.tizzer.counttool.constant.ChangeType;
 import org.tizzer.counttool.constant.FileType;
 import org.tizzer.counttool.constant.ImageSource;
 import org.tizzer.counttool.constant.Signal;
-import org.tizzer.counttool.constant.ThemeMode;
 import org.tizzer.counttool.dialog.AboutDialog;
+import org.tizzer.counttool.dialog.HistoryDialog;
 import org.tizzer.counttool.dialog.InfoDialog;
 import org.tizzer.counttool.dialog.SettingDialog;
 import org.tizzer.counttool.dialog.ThemeDialog;
 import org.tizzer.counttool.util.AsyncTask;
 import org.tizzer.counttool.util.DefineParser;
 import org.tizzer.counttool.util.FileCountHandler;
+import org.tizzer.counttool.util.HistoryStore;
 import org.tizzer.counttool.util.PDFCountHandler;
 import org.tizzer.counttool.util.ThemeManager;
 
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -96,6 +102,8 @@ public class MainController {
     private TableColumn<PendedFile, String> pageColumn;
     @FXML
     private TableColumn<PendedFile, String> pathColumn;
+    @FXML
+    private FloatingConvertButton convertButton;
 
     //设置
     private Define define;
@@ -147,9 +155,9 @@ public class MainController {
     public void initControl() {
         //placeholder
         sumList.setPlaceholder(new Label("累计历史记录"));
-        ImageView extraPlaceholder = new ImageView(ImageSource.NOEXTRA);
+        ImageView extraPlaceholder = new ImageView(ImageSource.NO_EXTRA);
         extraTable.setPlaceholder(extraPlaceholder);
-        ImageView pendedFilePlaceholder = new ImageView(ImageSource.NOTRADE);
+        ImageView pendedFilePlaceholder = new ImageView(ImageSource.NO_TRADE);
         pendedFileTable.setPlaceholder(pendedFilePlaceholder);
         //valueFactory
         pageSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, Integer.MAX_VALUE,
@@ -192,6 +200,10 @@ public class MainController {
         pathColumn.setCellFactory(param -> new TextTableCell<>());
         //choicebox
         extraComboBox.setVisibleRowCount(8);
+        //悬浮转换按钮
+        convertButton.setOnFilesReceived(this::convertFiles);
+
+
         extraComboBox.getItems().addAll(define.getExtras());
     }
 
@@ -291,9 +303,9 @@ public class MainController {
                     //待转换并计数入口
                     if (pendedFile.getState() == Signal.READY) {
                         //切换为 转换并计数 状态
-                        pendedFile.setState(Signal.PENDINGANDCOUNT);
+                        pendedFile.setState(Signal.PENDING_AND_COUNT);
                         //发送开始 转换并计数 信号
-                        sendSignal(Signal.PENDINGANDCOUNT);
+                        sendSignal(Signal.PENDING_AND_COUNT);
 
                         //office文档转换并计数
                         pdfCountHandler.office2pdf(pendedFile.getPath(), pendedFile.getFileType());
@@ -302,12 +314,14 @@ public class MainController {
                         pendedFile.setPage(String.valueOf(pdfCountHandler.getPage()));
                         //设置状态
                         pendedFile.setState(Signal.DONE);
+                        //写入转换历史
+                        recordConvert(pendedFile.getPath());
                         //发送任务结束信号
                         sendSignal(Signal.DONE);
                     }
 
                     //待计数入口
-                    if (pendedFile.getState() == Signal.ONLYCOUNT) {
+                    if (pendedFile.getState() == Signal.ONLY_COUNT) {
                         //计数
                         pdfCountHandler.count(new File(pendedFile.getPath()));
 
@@ -323,7 +337,7 @@ public class MainController {
             @Override
             public void doInFXThread() {
                 switch (getSignal()) {
-                    case PENDINGANDCOUNT:
+                    case PENDING_AND_COUNT:
                     case DONE:
                         pendedFileTable.refresh();
                         break;
@@ -376,6 +390,13 @@ public class MainController {
     }
 
     /**
+     * 转换历史
+     */
+    public void history() {
+        new HistoryDialog(stage).showAndWait();
+    }
+
+    /**
      * 关于
      */
     public void about() {
@@ -384,6 +405,133 @@ public class MainController {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    //------------------------------------- 悬浮转换功能区 -------------------------------------//
+
+    /**
+     * 转换一批文件（点击选择或拖拽而来）
+     *
+     * @param sourcePath
+     */
+    private void recordConvert(String sourcePath) {
+        File source = new File(sourcePath);
+        String name = source.getName();
+        int dot = name.lastIndexOf('.');
+        String pdfPath = source.getParent() + File.separator
+                + (dot >= 0 ? name.substring(0, dot) : name) + ".pdf";
+        String status = new File(pdfPath).exists() ? "成功" : "失败";
+        String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        HistoryStore.insert(time, name, sourcePath, status);
+    }
+
+    private void convertFiles(List<File> files) {
+        if (files == null || files.isEmpty()) {
+            return;
+        }
+        Map<File, FileType> convertible = new LinkedHashMap<>();
+        Map<String, Integer> skippedBySuffix = new LinkedHashMap<>();
+        for (File file : files) {
+            collectConvertibles(file, convertible, skippedBySuffix);
+        }
+        //不可转换文件：吐司提示文件名与格式
+        if (!skippedBySuffix.isEmpty()) {
+            StringBuilder sb = new StringBuilder();
+            for (Map.Entry<String, Integer> entry : skippedBySuffix.entrySet()) {
+                if (sb.length() > 0) {
+                    sb.append('\n');
+                }
+                sb.append(entry.getValue() > 1
+                        ? entry.getKey() + " 等 " + entry.getValue() + " 个"
+                        : entry.getKey());
+                sb.append("：该格式文件无法转换");
+            }
+            convertButton.showToast(sb.toString());
+        }
+        if (convertible.isEmpty()) {
+            return;
+        }
+        //流光示意转换中
+        convertButton.setConverting(true);
+        service.execute(new AsyncTask() {
+            @Override
+            protected Object call() {
+                PDFCountHandler handler = new PDFCountHandler();
+                for (Map.Entry<File, FileType> entry : convertible.entrySet()) {
+                    handler.office2pdf(entry.getKey().getAbsolutePath(), entry.getValue());
+                    recordConvert(entry.getKey().getAbsolutePath());
+                }
+                return null;
+            }
+
+            @Override
+            protected void succeeded() {
+                convertButton.setConverting(false);
+                convertButton.showToast("转换完成，共处理 " + convertible.size() + " 个文件，结果保存在原目录");
+            }
+
+            @Override
+            protected void failed() {
+                convertButton.setConverting(false);
+                convertButton.showToast("转换过程出错，请重试");
+            }
+        });
+    }
+
+    /**
+     * 递归收集可转换文件，不可转换的按文件名统计
+     *
+     * @param file
+     * @param convertible
+     * @param skipped
+     */
+    private void collectConvertibles(File file, Map<File, FileType> convertible, Map<String, Integer> skipped) {
+        if (file.isDirectory()) {
+            File[] children = file.listFiles();
+            if (children != null) {
+                for (File child : children) {
+                    collectConvertibles(child, convertible, skipped);
+                }
+            }
+            return;
+        }
+        String name = file.getName().toLowerCase();
+        //跳过隐藏文件与office缓存文件
+        if (file.isHidden() || name.startsWith("~$")) {
+            return;
+        }
+        int dot = name.lastIndexOf('.');
+        String suffix = dot >= 0 ? name.substring(dot + 1) : "";
+        FileType type;
+        switch (suffix) {
+            case "doc":
+            case "docx":
+            case "wps":
+            case "dot":
+            case "wpt":
+                type = FileType.WORD;
+                break;
+            case "xls":
+            case "xlsx":
+            case "csv":
+            case "xlt":
+            case "et":
+            case "ett":
+                type = FileType.EXCEL;
+                break;
+            case "ppt":
+            case "pptx":
+            case "dps":
+            case "dpt":
+            case "pot":
+            case "pps":
+                type = FileType.PPT;
+                break;
+            default:
+                skipped.merge(file.getName(), 1, Integer::sum);
+                return;
+        }
+        convertible.put(file, type);
     }
 
     //------------------------------------- 组件菜单功能区 -------------------------------------//

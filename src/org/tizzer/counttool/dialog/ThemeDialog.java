@@ -2,7 +2,6 @@ package org.tizzer.counttool.dialog;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
@@ -16,6 +15,8 @@ import org.tizzer.counttool.constant.ImageSource;
 import org.tizzer.counttool.constant.ThemeMode;
 import org.tizzer.counttool.util.ThemeManager;
 
+import java.util.Objects;
+
 /**
  * 主题设置对话框
  *
@@ -27,7 +28,7 @@ public class ThemeDialog extends Dialog<ThemeMode> {
         Stage stage = (Stage) getDialogPane().getScene().getWindow();
         stage.getIcons().add(ImageSource.LOGO);
         getDialogPane().getStylesheets().add(
-                getClass().getResource("/org/tizzer/counttool/css/custom.css").toExternalForm());
+                Objects.requireNonNull(getClass().getResource("/org/tizzer/counttool/css/custom.css")).toExternalForm());
 
         setTitle("主题设置");
         initOwner(owner);
@@ -61,8 +62,7 @@ public class ThemeDialog extends Dialog<ThemeMode> {
         //确定时返回选中的主题模式，取消时返回null（保持主题不变）
         setResultConverter(param -> {
             if (param == ButtonType.OK) {
-                ThemeMode selected = (ThemeMode) group.getSelectedToggle().getUserData();
-                return selected;
+                return (ThemeMode) group.getSelectedToggle().getUserData();
             }
             return null;
         });

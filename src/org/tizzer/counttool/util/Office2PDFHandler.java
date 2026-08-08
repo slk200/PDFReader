@@ -41,10 +41,10 @@ class Office2PDFHandler {
             try {
                 convertWord(MS_WORD_PROGID, inFile, outFile);
             } catch (Exception ex) {
-                ex.printStackTrace();
+                System.out.println(ex.getMessage());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -95,10 +95,10 @@ class Office2PDFHandler {
             try {
                 convertPpt(MS_PPT_PROGID, inFile, outFile);
             } catch (Exception ex) {
-                ex.printStackTrace();
+                System.out.println(ex.getMessage());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -146,10 +146,10 @@ class Office2PDFHandler {
             try {
                 convertExcel(MS_EXCEL_PROGID, inFile, outFile);
             } catch (Exception ex) {
-                ex.printStackTrace();
+                System.out.println(ex.getMessage());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
