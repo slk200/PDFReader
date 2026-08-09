@@ -35,7 +35,7 @@ public class BootApplication extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         ThemeManager.init(scene);
-        primaryStage.setMinWidth(960);
-        primaryStage.setMinHeight(720);
+        primaryStage.setMinWidth(1300);
+        primaryStage.setMinHeight(850);
     }
 }

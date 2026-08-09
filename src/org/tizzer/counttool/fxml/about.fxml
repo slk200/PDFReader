@@ -5,38 +5,60 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import java.net.URL?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171"
       styleClass="glass-panel" spacing="14.0" prefWidth="320.0"
       fx:controller="org.tizzer.counttool.controller.AboutController">
     <padding>
-        <Insets top="20.0" right="22.0" bottom="20.0" left="22.0"/>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
     </padding>
 
-    <HBox alignment="CENTER">
-        <ImageView fitHeight="48.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@/image/powerby@240px.png"/>
-        </ImageView>
+    <Label text="本软件使用的第三方框架"/>
+
+    <HBox spacing="3.0" alignment="CENTER_LEFT">
+        <Text text="powered" fill="steelblue"/>
+        <Text text="by" fill="coral"/>
+        <Hyperlink focusTraversable="false" onAction="#visit_JavaFX" text="JavaFX v2.2">
+            <tooltip>
+                <Tooltip text="https://gluonhq.com/products/javafx/"/>
+            </tooltip>
+        </Hyperlink>
     </HBox>
 
-    <HBox spacing="12.0" alignment="CENTER_LEFT">
-        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@/image/javafx@64px.png"/>
-        </ImageView>
-        <Hyperlink focusTraversable="false" onAction="#visitJavaFX" text="JavaFX v2.2"/>
+    <HBox spacing="3.0" alignment="CENTER_LEFT">
+        <Text text="powered" fill="steelblue"/>
+        <Text text="by" fill="coral"/>
+        <Hyperlink focusTraversable="false" onAction="#visit_Jcob" text="Jcob v1.21">
+            <tooltip>
+                <Tooltip text="https://github.com/freemansoft/jacob-project"/>
+            </tooltip>
+        </Hyperlink>
     </HBox>
 
-    <HBox spacing="12.0" alignment="CENTER_LEFT">
-        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@/image/jcob@64px.png"/>
-        </ImageView>
-        <Hyperlink focusTraversable="false" onAction="#visitJcob" text="Jcob v1.19"/>
+    <HBox spacing="3.0" alignment="CENTER_LEFT">
+        <Text text="powered" fill="steelblue"/>
+        <Text text="by" fill="coral"/>
+        <Hyperlink focusTraversable="false" onAction="#visit_iText" text="iText v2.1.7">
+            <tooltip>
+                <Tooltip text="https://itextpdf.com/"/>
+            </tooltip>
+        </Hyperlink>
     </HBox>
 
-    <HBox spacing="12.0" alignment="CENTER_LEFT">
-        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@/image/itext@64px.png"/>
+    <HBox alignment="CENTER_RIGHT">
+        <padding>
+            <Insets top="20.0"/>
+        </padding>
+        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@/image/github@48px.png"/>
         </ImageView>
-        <Hyperlink focusTraversable="false" onAction="#visitiText" text="iText v2.1.7"/>
+        <Hyperlink focusTraversable="false" onAction="#visit_github" text="Ver 3.0.2">
+            <tooltip>
+                <Tooltip text="https://github.com/slk200/PDFReader"/>
+            </tooltip>
+        </Hyperlink>
     </HBox>
 
     <stylesheets>
