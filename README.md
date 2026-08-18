@@ -2,7 +2,7 @@
 * 本软件目前仅适配Windows
 * 本软件依赖WPS或者MS Office，使用时确保Windows上已安装其一
 
-### ver 3.0.2 软件截图
+### 软件截图
 ![Alt text](/snap/snap_light.png)
 ![Alt text](/snap/snap_dark.png)
 
