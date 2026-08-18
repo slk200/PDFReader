@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefWidth="320.0" spacing="14.0" styleClass="glass-panel" xmlns="http://javafx.com/javafx/8.0.501"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AboutController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="本软件使用的第三方框架">
+        <font>
+            <Font name="System Bold" size="20.0"/>
+        </font>
+    </Label>
+
+    <HBox alignment="CENTER_LEFT" spacing="3.0">
+        <Text fill="steelblue" text="powered"/>
+        <Text fill="coral" text="by"/>
+        <Hyperlink focusTraversable="false" onAction="#visit_JavaFX" text="JavaFX v2.2">
+            <tooltip>
+                <Tooltip text="https://gluonhq.com/products/javafx/"/>
+            </tooltip>
+        </Hyperlink>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="3.0">
+        <Text fill="steelblue" text="powered"/>
+        <Text fill="coral" text="by"/>
+        <Hyperlink focusTraversable="false" onAction="#visit_Jcob" text="Jcob v1.21">
+            <tooltip>
+                <Tooltip text="https://github.com/freemansoft/jacob-project"/>
+            </tooltip>
+        </Hyperlink>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="3.0">
+        <Text fill="steelblue" text="powered"/>
+        <Text fill="coral" text="by"/>
+        <Hyperlink focusTraversable="false" onAction="#visit_iText" text="iText v2.1.7">
+            <tooltip>
+                <Tooltip text="https://itextpdf.com/"/>
+            </tooltip>
+        </Hyperlink>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="3.0">
+        <Text fill="steelblue" text="powered"/>
+        <Text fill="coral" text="by"/>
+        <Hyperlink focusTraversable="false" onAction="#visit_SQLLite" text="SQLLite v3.53.2.1">
+            <tooltip>
+                <Tooltip text="https://sqlite.org/index.html"/>
+            </tooltip>
+        </Hyperlink>
+    </HBox>
+
+    <HBox alignment="CENTER_RIGHT">
+        <padding>
+            <Insets top="20.0"/>
+        </padding>
+        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@/image/github@48px.png"/>
+        </ImageView>
+        <Hyperlink focusTraversable="false" onAction="#visit_github" text="Ver 3.0.3">
+            <tooltip>
+                <Tooltip text="https://github.com/slk200/PDFReader"/>
+            </tooltip>
+        </Hyperlink>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/css/custom.css"/>
+    </stylesheets>
+</VBox>

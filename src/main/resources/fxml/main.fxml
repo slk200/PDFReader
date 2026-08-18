@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import component.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.501" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controller.MainController">
+    <BorderPane>
+        <center>
+            <BorderPane prefHeight="800.0" prefWidth="1280.0">
+                <padding>
+                    <Insets bottom="12.0" left="12.0" right="12.0" top="8.0"/>
+                </padding>
+
+                <left>
+                    <VBox spacing="10.0" styleClass="glass-panel" BorderPane.alignment="TOP_LEFT">
+                        <BorderPane.margin>
+                            <Insets right="12.0"/>
+                        </BorderPane.margin>
+                        <padding>
+                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                        </padding>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="21.25"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="21.25"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="21.25"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="21.25"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Label text="页数">
+                                    <padding>
+                                        <Insets bottom="2.0" left="2.0"/>
+                                    </padding>
+                                </Label>
+                                <Label text="单价" GridPane.columnIndex="2">
+                                    <padding>
+                                        <Insets bottom="2.0" left="2.0"/>
+                                    </padding>
+                                </Label>
+                                <Label text="份数" GridPane.columnIndex="4">
+                                    <padding>
+                                        <Insets bottom="2.0" left="2.0"/>
+                                    </padding>
+                                </Label>
+                                <Label text="特殊" GridPane.columnIndex="6">
+                                    <padding>
+                                        <Insets bottom="2.0" left="2.0"/>
+                                    </padding>
+                                </Label>
+                                <Spinner fx:id="pageSpinner" editable="true" prefHeight="26.0" prefWidth="82.0"
+                                         GridPane.rowIndex="1"/>
+                                <Label text="x" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </Label>
+                                <Spinner fx:id="priceSpinner" editable="true" prefHeight="26.0" prefWidth="82.0"
+                                         GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                                <Label text="x" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </Label>
+                                <Spinner fx:id="numSpinner" editable="true" prefHeight="26.0" prefWidth="82.0"
+                                         GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+                                <Label text="+" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </Label>
+                                <Spinner fx:id="specSpinner" editable="true" prefHeight="26.0" prefWidth="82.0"
+                                         GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+                            </children>
+                        </GridPane>
+                        <Button maxWidth="1.7976931348623157E308" onAction="#sum"
+                                style="-fx-background-color: #1f85fe; -fx-border-width: 0;-fx-text-fill: white"
+                                text="累计"/>
+
+                        <!-- 累计历史 -->
+                        <ListView fx:id="sumList" minHeight="80.0" prefHeight="130.0" VBox.vgrow="ALWAYS">
+                            <contextMenu>
+                                <ContextMenu>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#deleteSum" text="删除"/>
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </ListView>
+
+                        <!-- 附加项选择行 -->
+                        <HBox alignment="CENTER_LEFT" spacing="6.0">
+                            <ComboBox fx:id="extraComboBox" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                            <Button mnemonicParsing="false" onAction="#addExtra" prefWidth="55.0" text="添加"/>
+                        </HBox>
+
+                        <!-- 附加项表格 -->
+                        <TableView fx:id="extraTable" editable="true" minHeight="120.0" VBox.vgrow="ALWAYS">
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
+                            <columns>
+                                <TableColumn fx:id="extraColumn" editable="false" prefWidth="75.0" sortable="false"
+                                             text="附加项"/>
+                                <TableColumn fx:id="priceColumn" editable="false" prefWidth="75.0" sortable="false"
+                                             text="单价"/>
+                                <TableColumn fx:id="numColumn" prefWidth="20.0" sortable="false" text="份数"/>
+                            </columns>
+                            <contextMenu>
+                                <ContextMenu>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#deleteExtra" text="删除"/>
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </TableView>
+                    </VBox>
+                </left>
+
+                <center>
+                    <VBox spacing="8.0" styleClass="glass-panel" BorderPane.alignment="CENTER">
+                        <padding>
+                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                        </padding>
+                        <GridPane hgap="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" prefWidth="16.7"/>
+                                <ColumnConstraints hgrow="SOMETIMES" prefWidth="16.7"/>
+                                <ColumnConstraints hgrow="SOMETIMES" prefWidth="16.7"/>
+                                <ColumnConstraints hgrow="SOMETIMES" prefWidth="16.7"/>
+                                <ColumnConstraints hgrow="SOMETIMES" prefWidth="16.7"/>
+                                <ColumnConstraints hgrow="SOMETIMES" prefWidth="16.7"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="6.0" styleClass="card">
+                                    <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@/image/office_doc@64px.png"/>
+                                    </ImageView>
+                                    <Label fx:id="wordNum" text="Word 0"/>
+                                    <padding>
+                                        <Insets bottom="5.0" left="10.0" top="5.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="6.0" styleClass="card" GridPane.columnIndex="1">
+                                    <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@/image/office_els@64px.png"/>
+                                    </ImageView>
+                                    <Label fx:id="excelNum" text="Excel 0"/>
+                                    <padding>
+                                        <Insets bottom="5.0" left="10.0" top="5.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="6.0" styleClass="card" GridPane.columnIndex="2">
+                                    <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@/image/office_ppt@64px.png"/>
+                                    </ImageView>
+                                    <Label fx:id="pptNum" text="PPT 0"/>
+                                    <padding>
+                                        <Insets bottom="5.0" left="10.0" top="5.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="6.0" styleClass="card" GridPane.columnIndex="3">
+                                    <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@/image/office_pdf@64px.png"/>
+                                    </ImageView>
+                                    <Label fx:id="pdfNum" text="PDF 0"/>
+                                    <padding>
+                                        <Insets bottom="5.0" left="10.0" top="5.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="6.0" styleClass="card" GridPane.columnIndex="4">
+                                    <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@/image/office_image@64px.png"/>
+                                    </ImageView>
+                                    <Label fx:id="imageNum" text="图像 0"/>
+                                    <padding>
+                                        <Insets bottom="5.0" left="10.0" top="5.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="6.0" styleClass="card" GridPane.columnIndex="5">
+                                    <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@/image/office_other@64px.png"/>
+                                    </ImageView>
+                                    <Label fx:id="otherNum" text="其他 0"/>
+                                    <padding>
+                                        <Insets bottom="5.0" left="10.0" top="5.0"/>
+                                    </padding>
+                                </HBox>
+                            </children>
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                        </GridPane>
+
+                        <TableView fx:id="pendedFileTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="typeColumn" editable="false" maxWidth="40.0" minWidth="40.0"
+                                             prefWidth="40.0" sortable="false" text="类型"/>
+                                <TableColumn fx:id="nameColumn" editable="false" minWidth="0.0" prefWidth="101.0"
+                                             sortable="false" text="文件名"/>
+                                <TableColumn fx:id="stateColumn" editable="false" maxWidth="150.0" minWidth="150.0"
+                                             prefWidth="150.0" sortable="false" text="状态"/>
+                                <TableColumn fx:id="pageColumn" editable="false" maxWidth="60.0" minWidth="60.0"
+                                             prefWidth="60.0" sortable="false" text="页数"/>
+                                <TableColumn fx:id="pathColumn" editable="false" prefWidth="229.0" sortable="false"
+                                             text="文件路径"/>
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
+                            <contextMenu>
+                                <ContextMenu>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#openFile" text="打开文件"/>
+                                        <MenuItem mnemonicParsing="false" onAction="#openPDFFile" text="打开PDF文件"/>
+                                        <MenuItem mnemonicParsing="false" onAction="#showInExplore" text="打开文件夹"/>
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </TableView>
+                    </VBox>
+                </center>
+
+                <top>
+                    <BorderPane prefWidth="200.0" styleClass="glass-panel" BorderPane.alignment="CENTER">
+                        <right>
+                            <HBox spacing="25.0" BorderPane.alignment="CENTER">
+                                <children>
+                                    <Label fx:id="totalPage" alignment="CENTER" prefHeight="35.0"
+                                           style="-fx-background-color: #dde4fd;-fx-background-radius: 10; -fx-text-fill: #202c63"
+                                           text="总页数：0">
+                                        <font>
+                                            <Font name="System Bold" size="16.0"/>
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets/>
+                                        </HBox.margin>
+                                        <padding>
+                                            <Insets left="25.0" right="25.0"/>
+                                        </padding>
+                                    </Label>
+
+                                    <!-- 总价 -->
+                                    <Label fx:id="totalPrice" alignment="CENTER" prefHeight="35.0"
+                                           style="-fx-background-color: #fbe8d3; -fx-background-radius: 10; -fx-text-fill: #dd6825"
+                                           text="总价：0.00元">
+                                        <padding>
+                                            <Insets left="25.0" right="25.0"/>
+                                        </padding>
+                                        <font>
+                                            <Font name="System Bold" size="16.0"/>
+                                        </font>
+                                    </Label>
+                                </children>
+                            </HBox>
+                        </right>
+                        <left>
+
+                            <!-- 文件夹选择行 -->
+                            <HBox alignment="CENTER_LEFT" spacing="10" BorderPane.alignment="CENTER">
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@/image/folder@64px.png"/>
+                                </ImageView>
+                                <TextField fx:id="scanField" disable="true" promptText="选择文件夹"
+                                           HBox.hgrow="ALWAYS"/>
+                                <Button mnemonicParsing="false" onAction="#scanFile" prefWidth="55.0" text="浏览"/>
+                                <Button mnemonicParsing="false" onAction="#execute" prefWidth="55.0" text="执行"/>
+                            </HBox>
+                        </left>
+                        <BorderPane.margin>
+                            <Insets bottom="12.0"/>
+                        </BorderPane.margin>
+                        <padding>
+                            <Insets bottom="10.0" left="12.0" right="12.0" top="10.0"/>
+                        </padding>
+                    </BorderPane>
+                </top>
+            </BorderPane>
+        </center>
+
+        <top>
+            <MenuBar BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets/>
+                </BorderPane.margin>
+                <padding>
+                    <Insets bottom="2" left="6" right="6" top="2"/>
+                </padding>
+                <Menu mnemonicParsing="false" text="文件">
+                    <MenuItem mnemonicParsing="false" onAction="#scanFile" text="打开文件夹">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem mnemonicParsing="false"/>
+                    <MenuItem mnemonicParsing="false" onAction="#exit" text="退出">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                </Menu>
+                <Menu mnemonicParsing="false" text="编辑">
+                    <MenuItem mnemonicParsing="false" onAction="#setting" text="设置">
+                        <accelerator>
+                            <KeyCodeCombination alt="DOWN" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#changeTheme" text="主题">
+                        <accelerator>
+                            <KeyCodeCombination alt="DOWN" code="T" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem mnemonicParsing="false"/>
+                    <MenuItem mnemonicParsing="false" onAction="#execute" text="执行">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#reset" text="恢复">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
+                    <MenuItem mnemonicParsing="false" onAction="#history" text="历史">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#about" text="关于">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="F12" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                </Menu>
+            </MenuBar>
+        </top>
+    </BorderPane>
+    <FloatingConvertButton fx:id="convertButton"/>
+    <stylesheets>
+        <URL value="@/css/custom.css"/>
+    </stylesheets>
+</StackPane>

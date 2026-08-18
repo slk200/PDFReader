@@ -1,0 +1,1007 @@
+/* ============================================================
+   Liquid Glass Theme · 液态玻璃主题
+   ============================================================ */
+
+/* ---------- 全局基础 ---------- */
+.root {
+    -fx-font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-focus-color: rgba(120, 160, 255, 0.80);
+    -fx-faint-focus-color: rgba(120, 160, 255, 0.20);
+    -fx-background-color: radial-gradient(center 12% 8%, radius 55%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(center 88% 92%, radius 60%, rgba(166, 192, 254, 0.55), rgba(166, 192, 254, 0) 72%),
+    radial-gradient(center 78% 12%, radius 40%, rgba(244, 208, 253, 0.40), rgba(244, 208, 253, 0) 70%),
+    linear-gradient(to bottom right, #dde7fb, #e8e5fa 48%, #f6e8f4);
+}
+
+.label {
+    -fx-text-fill: #26345a;
+}
+
+.text {
+    -fx-fill: #26345a;
+}
+
+#errorTip {
+    -fx-fill: #e5484d;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-insets: 0;
+    -fx-border-width: 1.2;
+    -fx-border-color: #ebebeb;
+}
+
+.total_page {
+    -fx-background-color: #dde4fd;
+    -fx-background-radius: 10;
+    -fx-text-fill: #202c63
+}
+
+.total_price {
+    -fx-background-color: #fbe8d3;
+    -fx-background-radius: 10;
+    -fx-text-fill: #dd6825
+}
+
+/* ---------- 磨砂玻璃面板 ---------- */
+.glass-panel {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.10));
+    -fx-background-radius: 18;
+    -fx-background-insets: 0;
+    -fx-border-radius: 18;
+    -fx-border-insets: 0;
+    -fx-border-width: 1.2;
+    -fx-border-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.30));
+    -fx-effect: dropshadow(gaussian, rgba(80, 100, 150, 0.30), 26, 0.18, 0, 10);
+}
+
+/* ---------- 按钮 ---------- */
+.button {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.45));
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.95);
+    -fx-text-fill: #2a3a66;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(96, 118, 170, 0.28), 8, 0.12, 0, 3);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(238, 244, 255, 0.78));
+    -fx-effect: dropshadow(gaussian, rgba(91, 140, 255, 0.45), 14, 0.25, 0, 4);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, rgba(226, 235, 255, 0.90), rgba(208, 222, 252, 0.70));
+    -fx-effect: dropshadow(gaussian, rgba(91, 140, 255, 0.35), 6, 0.10, 0, 1);
+}
+
+.button:focused {
+    -fx-border-color: rgba(120, 160, 255, 0.90);
+}
+
+/* ---------- 文本框 ---------- */
+.text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.55);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.85);
+    -fx-text-fill: #22305a;
+    -fx-prompt-text-fill: rgba(70, 85, 125, 0.55);
+    -fx-highlight-fill: rgba(120, 160, 255, 0.35);
+}
+
+.text-field:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.78);
+    -fx-border-color: rgba(120, 160, 255, 0.85);
+    -fx-effect: dropshadow(gaussian, rgba(120, 160, 255, 0.35), 8, 0.20, 0, 0);
+}
+
+.text-field:disabled {
+    -fx-background-color: rgba(255, 255, 255, 0.35);
+    -fx-text-fill: rgba(50, 62, 95, 0.85);
+    -fx-opacity: 1.0;
+}
+
+/* ---------- 数字输入框 Spinner ---------- */
+.spinner {
+    -fx-background-color: rgba(255, 255, 255, 0.55);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.85);
+}
+
+/*.spinner:focused,*/
+/*.spinner .text-field {*/
+/*    -fx-background-color: transparent;*/
+/*    -fx-border-color: transparent;*/
+/*    -fx-effect: null;*/
+/*}*/
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.45);
+    -fx-background-radius: 6;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.90);
+}
+
+.spinner .increment-arrow-button .increment-arrow,
+.spinner .decrement-arrow-button .decrement-arrow {
+    -fx-background-color: #4a5d92;
+}
+
+/* ---------- 下拉框 ComboBox ---------- */
+.combo-box {
+    -fx-background-color: rgba(255, 255, 255, 0.55);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.85);
+}
+
+.combo-box:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.72);
+}
+
+.combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #22305a;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #4a5d92;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: rgba(250, 251, 255, 0.97);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.90);
+    -fx-effect: dropshadow(gaussian, rgba(80, 100, 150, 0.35), 18, 0.20, 0, 6);
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #22305a;
+}
+
+.combo-box-popup .list-view .list-cell:hover,
+.combo-box-popup .list-view .list-cell:focused {
+    -fx-background-color: rgba(130, 165, 255, 0.28);
+    -fx-background-radius: 8;
+}
+
+/* ---------- 表格 TableView ---------- */
+.table-view {
+    -fx-background-color: rgba(255, 255, 255, 0.30);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.75);
+    -fx-padding: 5;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view:focused {
+    -fx-border-color: rgba(140, 170, 255, 0.90);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.45));
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(120, 140, 190, 0.25) transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #3c4c7c;
+    -fx-font-weight: bold;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: rgba(60, 75, 115, 0.60);
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-cell-size: 30;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.20);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: rgba(122, 162, 255, 0.32);
+}
+
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.table-cell {
+    -fx-text-fill: #25345e;
+}
+
+/* ---------- 列表 ListView ---------- */
+.list-view {
+    -fx-background-color: rgba(255, 255, 255, 0.30);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.75);
+    -fx-padding: 4;
+}
+
+.list-view:focused {
+    -fx-border-color: rgba(140, 170, 255, 0.90);
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #25345e;
+}
+
+.list-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.20);
+}
+
+.list-cell:selected {
+    -fx-background-color: rgba(122, 162, 255, 0.32);
+    -fx-background-radius: 8;
+}
+
+.list-cell:empty {
+    -fx-background-color: transparent;
+}
+
+/* ---------- 菜单栏 ---------- */
+.menu-bar {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.38));
+    -fx-border-color: rgba(255, 255, 255, 0.70);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(80, 100, 150, 0.18), 10, 0.10, 0, 3);
+}
+
+.menu-bar .menu {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-padding: 3 8 3 8;
+}
+
+.menu-bar .menu .label {
+    -fx-text-fill: #24365f;
+}
+
+.menu-bar .menu:hover,
+.menu-bar .menu:showing {
+    -fx-background-color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---------- 右键 / 下拉菜单 ---------- */
+.context-menu {
+    -fx-background-color: rgba(250, 251, 255, 0.97);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.90);
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(80, 100, 150, 0.35), 18, 0.20, 0, 6);
+}
+
+.menu-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-padding: 4 10 4 10;
+}
+
+.menu-item .label {
+    -fx-text-fill: #24365f;
+}
+
+.menu-item:hover,
+.menu-item:focused {
+    -fx-background-color: rgba(130, 165, 255, 0.28);
+}
+
+.menu-item:hover .label,
+.menu-item:focused .label {
+    -fx-text-fill: #16244a;
+}
+
+.separator .line {
+    -fx-border-color: rgba(120, 140, 190, 0.30);
+}
+
+/* ---------- 滚动条 ---------- */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(120, 140, 195, 0.35);
+    -fx-background-radius: 6;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(120, 140, 195, 0.55);
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: rgba(120, 140, 195, 0.70);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #6b7db4;
+}
+
+.scroll-bar .corner {
+    -fx-background-color: transparent;
+}
+
+/* ---------- 进度指示器 ---------- */
+.progress-indicator {
+    -fx-progress-color: #5b8cff;
+}
+
+.progress-indicator .percentage {
+    -fx-fill: #26345a;
+}
+
+/* ---------- 提示 Tooltip ---------- */
+.tooltip {
+    -fx-background-color: rgba(250, 251, 255, 0.97);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.90);
+    -fx-text-fill: #26345a;
+    -fx-effect: dropshadow(gaussian, rgba(80, 100, 150, 0.35), 14, 0.20, 0, 5);
+}
+
+/* ---------- 对话框 ---------- */
+.dialog-pane {
+    -fx-background-color: radial-gradient(center 15% 10%, radius 55%, rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0) 70%),
+    linear-gradient(to bottom right, #dde7fb, #e8e5fa 48%, #f6e8f4);
+    -fx-padding: 18px 18px 30px 18px;
+}
+
+.dialog-pane > .button-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 14px -5px -32px 10px;
+}
+
+/* ---------- 超链接 ---------- */
+.hyperlink {
+    -fx-text-fill: #2f7fe0;
+    -fx-underline: false;
+    -fx-border-color: transparent;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #1f6fd0;
+    -fx-underline: true;
+}
+
+.hyperlink:pressed {
+    -fx-text-fill: #155ab6;
+    -fx-underline: true;
+}
+
+.hyperlink:visited {
+    -fx-text-fill: #2f7fe0;
+}
+
+/* ============================================================
+   Dark Liquid Glass Theme · 深色液态玻璃主题
+   （当根节点或对话框被加上 .dark 类时生效）
+   ============================================================ */
+
+/* ---------- 全局基础（深色） ---------- */
+.dark {
+    -fx-background-color: radial-gradient(center 12% 8%, radius 55%, rgba(120, 150, 255, 0.16), rgba(120, 150, 255, 0) 70%),
+    radial-gradient(center 88% 92%, radius 60%, rgba(150, 110, 255, 0.18), rgba(150, 110, 255, 0) 72%),
+    radial-gradient(center 78% 12%, radius 40%, rgba(255, 130, 220, 0.10), rgba(255, 130, 220, 0) 70%),
+    linear-gradient(to bottom right, #131a2c, #1a1630 48%, #241a2e);
+}
+
+.dark .label {
+    -fx-text-fill: #e8edf9;
+}
+
+.dark .text {
+    -fx-fill: #e8edf9;
+}
+
+.dark .card {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-border-radius: 12;
+    -fx-border-insets: 0;
+    -fx-border-width: 1.2;
+}
+
+/* ---------- 磨砂玻璃面板（深色） ---------- */
+.dark .glass-panel,
+.dark .glass-panel {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+    -fx-border-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.06));
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 26, 0.30, 0, 10);
+}
+
+/* ---------- 按钮（深色） ---------- */
+.dark .button {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-text-fill: #dbe3f6;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.40), 8, 0.20, 0, 3);
+}
+
+.dark .button:hover {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.08));
+    -fx-effect: dropshadow(gaussian, rgba(110, 150, 255, 0.35), 14, 0.30, 0, 4);
+}
+
+.dark .button:pressed {
+    -fx-background-color: linear-gradient(to bottom, rgba(90, 120, 220, 0.35), rgba(70, 100, 200, 0.25));
+    -fx-effect: dropshadow(gaussian, rgba(110, 150, 255, 0.30), 6, 0.15, 0, 1);
+}
+
+/* ---------- 文本框（深色） ---------- */
+.dark .text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-text-fill: #e8edf9;
+    -fx-prompt-text-fill: rgba(174, 185, 214, 0.60);
+    -fx-highlight-fill: rgba(110, 150, 255, 0.40);
+}
+
+.dark .text-field:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-border-color: rgba(120, 160, 255, 0.70);
+    -fx-effect: dropshadow(gaussian, rgba(120, 160, 255, 0.30), 8, 0.20, 0, 0);
+}
+
+.dark .text-field:disabled {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-text-fill: rgba(216, 224, 244, 0.80);
+}
+
+/* ---------- 数字输入框 Spinner（深色） ---------- */
+.dark .spinner {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+}
+
+.dark .spinner:focused {
+    -fx-border-color: rgba(120, 160, 255, 0.70);
+    -fx-effect: dropshadow(gaussian, rgba(120, 160, 255, 0.30), 8, 0.20, 0, 0);
+}
+
+.dark .spinner .increment-arrow-button,
+.dark .spinner .decrement-arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .spinner .increment-arrow-button:hover,
+.dark .spinner .decrement-arrow-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+}
+
+.dark .spinner .increment-arrow-button .increment-arrow,
+.dark .spinner .decrement-arrow-button .decrement-arrow {
+    -fx-background-color: #aeb9d6;
+}
+
+/* ---------- 下拉框 ComboBox（深色） ---------- */
+.dark .combo-box {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+}
+
+.dark .combo-box:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .combo-box .list-cell {
+    -fx-text-fill: #e8edf9;
+}
+
+.dark .combo-box .arrow {
+    -fx-background-color: #aeb9d6;
+}
+
+.dark .combo-box-popup .list-view {
+    -fx-background-color: rgba(30, 38, 58, 0.97);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 18, 0.30, 0, 6);
+}
+
+.dark .combo-box-popup .list-view .list-cell {
+    -fx-text-fill: #e8edf9;
+}
+
+.dark .combo-box-popup .list-view .list-cell:hover,
+.dark .combo-box-popup .list-view .list-cell:focused {
+    -fx-background-color: rgba(110, 150, 255, 0.28);
+}
+
+/* ---------- 表格 TableView（深色） ---------- */
+.dark .table-view {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+}
+
+.dark .table-view:focused {
+    -fx-border-color: rgba(120, 160, 255, 0.60);
+}
+
+.dark .table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
+}
+
+.dark .table-view .column-header,
+.dark .table-view .filler {
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.12) transparent;
+}
+
+.dark .table-view .column-header .label {
+    -fx-text-fill: #c5d0ea;
+}
+
+.dark .table-view .placeholder .label {
+    -fx-text-fill: rgba(174, 185, 214, 0.55);
+}
+
+.dark .table-row-cell {
+    -fx-background-color: transparent;
+}
+
+.dark .table-row-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+}
+
+.dark .table-row-cell:selected {
+    -fx-background-color: rgba(110, 150, 255, 0.28);
+}
+
+.dark .table-cell {
+    -fx-text-fill: #dfe6f6;
+}
+
+/* ---------- 列表 ListView（深色） ---------- */
+.dark .list-view {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+}
+
+.dark .list-view:focused {
+    -fx-border-color: rgba(120, 160, 255, 0.60);
+}
+
+.dark .list-cell {
+    -fx-text-fill: #dfe6f6;
+}
+
+.dark .list-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+}
+
+.dark .list-cell:selected {
+    -fx-background-color: rgba(110, 150, 255, 0.28);
+}
+
+/* ---------- 菜单栏（深色） ---------- */
+.dark .menu-bar {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 10, 0.20, 0, 3);
+}
+
+.dark .menu-bar .menu .label {
+    -fx-text-fill: #e8edf9;
+}
+
+.dark .menu-bar .menu:hover,
+.dark .menu-bar .menu:showing {
+    -fx-background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- 右键 / 下拉菜单（深色） ---------- */
+.dark .context-menu {
+    -fx-background-color: rgba(30, 38, 58, 0.97);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 18, 0.30, 0, 6);
+}
+
+.dark .menu-item .label {
+    -fx-text-fill: #e8edf9;
+}
+
+.dark .menu-item:hover,
+.dark .menu-item:focused {
+    -fx-background-color: rgba(110, 150, 255, 0.28);
+}
+
+.dark .menu-item:hover .label,
+.dark .menu-item:focused .label {
+    -fx-text-fill: #ffffff;
+}
+
+.dark .separator .line {
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- 滚动条（深色） ---------- */
+.dark .scroll-bar .thumb {
+    -fx-background-color: rgba(140, 160, 210, 0.30);
+}
+
+.dark .scroll-bar .thumb:hover {
+    -fx-background-color: rgba(140, 160, 210, 0.50);
+}
+
+.dark .scroll-bar .thumb:pressed {
+    -fx-background-color: rgba(140, 160, 210, 0.65);
+}
+
+.dark .scroll-bar .increment-arrow,
+.dark .scroll-bar .decrement-arrow {
+    -fx-background-color: #aeb9d6;
+}
+
+/* ---------- 进度指示器（深色） ---------- */
+.dark .progress-indicator {
+    -fx-progress-color: #6f9dff;
+}
+
+.dark .progress-indicator .percentage {
+    -fx-fill: #e8edf9;
+}
+
+/* ---------- 提示 Tooltip（深色） ---------- */
+.dark .tooltip {
+    -fx-background-color: rgba(30, 38, 58, 0.97);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-text-fill: #e8edf9;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 14, 0.30, 0, 5);
+}
+
+/* ---------- 对话框（深色） ---------- */
+.dark.dialog-pane,
+.dark .dialog-pane {
+    -fx-background-color: radial-gradient(center 15% 10%, radius 55%, rgba(120, 150, 255, 0.14), rgba(120, 150, 255, 0) 70%),
+    linear-gradient(to bottom right, #131a2c, #1a1630 48%, #241a2e);
+}
+
+/* ---------- 单选按钮（深色） ---------- */
+.dark .radio-button {
+    -fx-text-fill: #e8edf9;
+}
+
+.dark .radio-button .radio {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-border-radius: 100;
+    -fx-background-radius: 100;
+}
+
+.dark .radio-button:selected .radio {
+    -fx-background-color: rgba(110, 150, 255, 0.35);
+}
+
+.dark .radio-button .dot {
+    -fx-background-color: transparent;
+}
+
+.dark .radio-button:selected .dot {
+    -fx-background-color: #ffffff;
+}
+
+/* ---------- 超链接（深色） ---------- */
+.dark .hyperlink {
+    -fx-text-fill: #6f9dff;
+}
+
+.dark .hyperlink:hover {
+    -fx-text-fill: #8fb2ff;
+}
+
+.dark .hyperlink:pressed {
+    -fx-text-fill: #5583e8;
+}
+
+.dark .hyperlink:visited {
+    -fx-text-fill: #6f9dff;
+}
+
+/* ============================================================
+   悬浮转换按钮
+   ============================================================ */
+.float-button {
+    -fx-background-color: rgba(255, 255, 255, 0.78);
+    -fx-background-radius: 28;
+    -fx-background-insets: 0;
+    -fx-border-color: rgba(255, 255, 255, 0.95);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 28;
+    -fx-effect: dropshadow(gaussian, rgba(20, 80, 220, 0.35), 14, 0.3, 0, 4);
+}
+
+.float-button:hover, .float-hover {
+    -fx-background-color: rgba(230, 243, 255, 0.95);
+    -fx-border-color: rgba(64, 176, 255, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(20, 110, 255, 0.5), 18, 0.4, 0, 5);
+}
+
+/* 流光圆环：渐变边框旋转形成流光 */
+.float-ring {
+    -fx-background-color: transparent;
+    -fx-border-width: 5;
+    -fx-border-radius: 36;
+    -fx-border-color: linear-gradient(to top, #0d6efd, #40b0ff, transparent, transparent, #0d6efd);
+    -fx-effect: dropshadow(gaussian, rgba(20, 110, 255, 0.55), 10, 0.5, 0, 0);
+}
+
+/* 吐司气泡 */
+.float-toast {
+    -fx-background-color: rgba(40, 46, 60, 0.88);
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-padding: 10 14 10 14;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.3, 0, 3);
+}
+
+/* 深色模式下的悬浮按钮 */
+.dark .float-button {
+    -fx-background-color: rgba(30, 40, 62, 0.82);
+    -fx-border-color: rgba(120, 170, 255, 0.35);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 14, 0.35, 0, 4);
+}
+
+.dark .float-button:hover, .dark .float-hover {
+    -fx-background-color: rgba(42, 56, 86, 0.95);
+    -fx-border-color: rgba(80, 170, 255, 0.9);
+}
+
+/* ---------- 日期选择控件（液态玻璃） ---------- */
+.date-picker {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.40));
+    -fx-background-radius: 12;
+    -fx-background-insets: 0;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(96, 118, 170, 0.25), 8, 0.12, 0, 3);
+}
+
+.date-picker:focused, .date-picker:showing {
+    -fx-border-color: rgba(120, 160, 255, 0.85);
+    -fx-effect: dropshadow(gaussian, rgba(120, 160, 255, 0.4), 10, 0.25, 0, 0);
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #22305a;
+    -fx-prompt-text-fill: rgba(70, 85, 125, 0.55);
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-radius: 10;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+}
+
+.date-picker .arrow {
+    -fx-background-color: #4a5d92;
+}
+
+/* 弹出日历：统一深色圆角液态玻璃，浅色深色主题下都清晰可读 */
+.date-picker-popup {
+    -fx-background-color: rgba(26, 33, 50, 0.96);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 24, 0.35, 0, 8);
+}
+
+.date-picker-popup > * {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: linear-gradient(to bottom, rgba(72, 90, 130, 0.60), rgba(52, 66, 98, 0.45));
+    -fx-background-radius: 14 14 0 0;
+}
+
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #eef3ff;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup .spinner .button {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-radius: 10;
+    -fx-effect: null;
+}
+
+.date-picker-popup .spinner .button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+}
+
+.date-picker-popup .left-arrow, .date-picker-popup .right-arrow {
+    -fx-background-color: #cfe0ff;
+    -fx-shape: "M4,0 L8,4 L4,8 L0,4 Z";
+}
+
+.date-picker-popup .calendar-grid {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+}
+
+.date-picker-popup .cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.date-picker-popup .day-name-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #9fb4e8;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup .week-number-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7d90c4;
+}
+
+.date-picker-popup .date-cell, .date-picker-popup .day-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #f2f6ff;
+    -fx-background-radius: 8;
+}
+
+.date-picker-popup .date-cell:hover, .date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(110, 150, 255, 0.30);
+}
+
+.date-picker-popup .date-cell.selected, .date-picker-popup .day-cell.selected {
+    -fx-background-color: linear-gradient(to bottom, #6f9dff, #3f7bff);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(80, 140, 255, 0.6), 8, 0.4, 0, 2);
+}
+
+.date-picker-popup .date-cell.today, .date-picker-popup .day-cell.today {
+    -fx-border-color: #6f9dff;
+    -fx-border-radius: 8;
+}
+
+.date-picker-popup .date-cell:filled:hover, .date-picker-popup .day-cell:filled:hover {
+    -fx-background-color: rgba(110, 150, 255, 0.4);
+}
+
+/* 深色主题下控件本体改为深色玻璃 */
+.dark .date-picker {
+    -fx-background-color: linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+    -fx-border-color: rgba(255, 255, 255, 0.22);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 8, 0.2, 0, 3);
+}
+
+.dark .date-picker:focused, .dark .date-picker:showing {
+    -fx-border-color: rgba(110, 160, 255, 0.8);
+    -fx-effect: dropshadow(gaussian, rgba(110, 160, 255, 0.45), 10, 0.3, 0, 0);
+}
+
+.dark .date-picker .text-field {
+    -fx-text-fill: #e8edf9;
+    -fx-prompt-text-fill: rgba(174, 185, 214, 0.6);
+}
+
+.dark .date-picker .arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .date-picker .arrow-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.22);
+}
+
+.dark .date-picker .arrow {
+    -fx-background-color: #aeb9d6;
+}
+
+/* 高特异性覆盖：确保日期数字与表头在深色弹窗中清晰可读 */
+.date-picker-popup > .calendar-grid > .day-name-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #9fb4e8;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup > .calendar-grid > .week-number-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #7d90c4;
+}
+
+.date-picker-popup > .calendar-grid > .date-cell,
+.date-picker-popup > .calendar-grid > .day-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #f2f6ff;
+    -fx-background-radius: 8;
+}
+
+.date-picker-popup > .calendar-grid > .date-cell:hover,
+.date-picker-popup > .calendar-grid > .day-cell:hover {
+    -fx-background-color: rgba(110, 150, 255, 0.30);
+}
+
+.date-picker-popup > .calendar-grid > .date-cell.selected,
+.date-picker-popup > .calendar-grid > .day-cell.selected {
+    -fx-background-color: linear-gradient(to bottom, #6f9dff, #3f7bff);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(80, 140, 255, 0.6), 8, 0.4, 0, 2);
+}
+
+.date-picker-popup > .calendar-grid > .date-cell.today,
+.date-picker-popup > .calendar-grid > .day-cell.today {
+    -fx-border-color: #6f9dff;
+    -fx-border-radius: 8;
+}
+
+/* 弹窗内文本颜色：日期数字是 Text 节点，需用 -fx-fill 控制 */
+.date-picker-popup .text {
+    -fx-fill: #f2f6ff;
+}
+
+.date-picker-popup .day-name-cell .text {
+    -fx-fill: #9fb4e8;
+}
+
+.date-picker-popup .week-number-cell .text {
+    -fx-fill: #7d90c4;
+}
+
+.date-picker-popup .month-year-pane .text {
+    -fx-fill: #eef3ff;
+}
+
+.date-picker-popup .day-cell.selected .text,
+.date-picker-popup .date-cell.selected .text {
+    -fx-fill: #ffffff;
+}
